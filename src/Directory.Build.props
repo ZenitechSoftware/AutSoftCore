@@ -3,7 +3,7 @@
     <Version>$(BUILD_BUILDNUMBER)</Version>
     <Company>AutSoft Ltd.</Company>
     <Authors>AutSoft Ltd.</Authors>
-    <PackageIcon>AutSoft-logo.png</PackageIcon>
+    <PackageIcon>../AutSoft-logo.png</PackageIcon>
     <PackageIconUrl />
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
