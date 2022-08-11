@@ -12,10 +12,19 @@ public sealed class EntityNotFoundException : Exception
     /// </summary>
     /// <param name="message">Exception's message</param>
     /// <param name="innerException">Related tiggering exception</param>
-    private EntityNotFoundException(string message, Exception innerException)
+    private EntityNotFoundException(string message, Exception? innerException = null)
         : base(message, innerException)
     {
     }
+
+    /// <summary>
+    /// Foctory method which creates an <see cref="EntityNotFoundException"/> with a standard message.
+    /// </summary>
+    /// <typeparam name="T">Not found entity's type</typeparam>
+    /// <param name="id">Entity's id</param>
+    /// <returns>Returns <see cref="EntityNotFoundException"/> with a standard message.</returns>
+    public static EntityNotFoundException CreateForType<T>(long? id)
+        => new($"Cannot find entity of type {typeof(T).Name}" + (id.HasValue ? $" with id={id}" : string.Empty));
 
     /// <summary>
     /// Foctory method which creates an <see cref="EntityNotFoundException"/> with a standard message.
@@ -26,6 +35,15 @@ public sealed class EntityNotFoundException : Exception
     /// <returns>Returns <see cref="EntityNotFoundException"/> with a standard message.</returns>
     public static EntityNotFoundException CreateForType<T>(Exception innerException, long? id)
         => new($"Cannot find entity of type {typeof(T).Name}" + (id.HasValue ? $" with id={id}" : string.Empty), innerException);
+
+    /// <summary>
+    /// Foctory method which creates an <see cref="EntityNotFoundException"/> with a standard message.
+    /// </summary>
+    /// <typeparam name="T">Not found entity's type</typeparam>
+    /// <param name="queryParameters">Search parameters which occur this error</param>
+    /// <returns>Returns <see cref="EntityNotFoundException"/> with a standard message.</returns>
+    public static EntityNotFoundException CreateForTypeCustomParams<T>(params object[] queryParameters)
+        => new($"Cannot find entity of type {typeof(T).Name} with params:" + string.Join("; ", queryParameters));
 
     /// <summary>
     /// Foctory method which creates an <see cref="EntityNotFoundException"/> with a standard message.
