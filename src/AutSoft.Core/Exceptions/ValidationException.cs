@@ -1,11 +1,22 @@
 namespace AutSoft.Common.Exceptions;
 
+/// <summary>
+/// Exception for business related validation errors
+/// </summary>
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "RCS1194:Implement exception constructors.", Justification = "Egyedileg nem kell támogatni")]
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "This exception will not be serialized.")]
 public class ValidationException : BusinessException
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ValidationException"/> class.
+    /// </summary>
+    /// <param name="errors">Errors as key-value pairs</param>
+    /// <param name="message">Exception's message</param>
+    /// <param name="title">Exception's title for ProblemDetails</param>
+    /// <param name="type">Error's type identifier for ProblemDetails</param>
+    /// <param name="innerException">Related tiggering exception</param>
     public ValidationException(
-        List<ValidationError> errors,
+        Dictionary<string, string> errors,
         string? message = null,
         string? title = null,
         Uri? type = null,
@@ -15,26 +26,28 @@ public class ValidationException : BusinessException
         Errors = errors;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ValidationException"/> class.
+    /// </summary>
+    /// <param name="errorKey">Single error's key</param>
+    /// <param name="errorValue">Single error's message</param>
+    /// <param name="message">Exception's message</param>
+    /// <param name="title">Exception's title for ProblemDetails</param>
+    /// <param name="type">Error's type identifier for ProblemDetails</param>
+    /// <param name="innerException">Related tiggering exception</param>
     public ValidationException(
-        ValidationError error,
+        string errorKey,
+        string errorValue,
         string? message = null,
         string? title = null,
         Uri? type = null,
         Exception? innerException = null)
-        : this(new List<ValidationError> { error }, message, title, type, innerException)
+        : this(new Dictionary<string, string> { { errorKey, errorValue } }, message, title, type, innerException)
     {
     }
 
-    public ValidationException(
-        string key,
-        string error,
-        string? message = null,
-        string? title = null,
-        Uri? type = null,
-        Exception? innerException = null)
-        : this(new ValidationError(key, error), message, title, type, innerException)
-    {
-    }
-
-    public List<ValidationError> Errors { get; }
+    /// <summary>
+    /// Gets validation errors as key-value pairs
+    /// </summary>
+    public Dictionary<string, string> Errors { get; }
 }
