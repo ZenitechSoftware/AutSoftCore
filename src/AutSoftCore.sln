@@ -14,12 +14,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{4E394277-2CC7-43A6-BB85-E13E44F27F9E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		Directory.Build.props = Directory.Build.props
 		..\pipelines\autsoft-core-packages-cd.yml = ..\pipelines\autsoft-core-packages-cd.yml
+		Directory.Build.props = Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
 		..\pipelines\GitVersion.yml = ..\pipelines\GitVersion.yml
 		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutSoft.Common", "AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{FF908529-9DDE-4DFB-ABA9-A2045E715B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF908529-9DDE-4DFB-ABA9-A2045E715B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF908529-9DDE-4DFB-ABA9-A2045E715B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
