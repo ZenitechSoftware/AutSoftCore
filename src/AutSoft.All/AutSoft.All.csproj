@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj" />
+    <ProjectReference Include="..\AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj" />
+    <ProjectReference Include="..\AutSoft.Linq\AutSoft.Linq.csproj" />
+  </ItemGroup>
+
+</Project>
