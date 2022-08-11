@@ -1,41 +1,40 @@
-﻿using EntityFrameworkCore.Scaffolding.Handlebars;
+using EntityFrameworkCore.Scaffolding.Handlebars;
 using EntityFrameworkCore.Scaffolding.Handlebars.Helpers;
+
 using System.Collections.Generic;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions.Services
+namespace AutSoft.DbScaffolding.EntityAbstractions.Services;
+
+public class LanguageService : CSharpTemplateLanguageService
 {
-    public class LanguageService : CSharpTemplateLanguageService
+    public Dictionary<string, TemplateFileInfo> GetInterfaceTemplateFileInfo()
     {
-        public Dictionary<string, TemplateFileInfo> GetInterfaceTemplateFileInfo()
+        return new Dictionary<string, TemplateFileInfo>
         {
-            var result = new Dictionary<string, TemplateFileInfo>
             {
+                Consts.InterfaceTemplate,
+                new TemplateFileInfo
                 {
-                    Consts.InterfaceTemplate,
-                    new TemplateFileInfo
-                    {
-                        RelativeDirectory = Consts.InterfaceDirectory,
-                        FileName = Consts.InterfaceTemplate + Constants.TemplateExtension
-                    }
-                },
+                    RelativeDirectory = Consts.InterfaceDirectory,
+                    FileName = Consts.InterfaceTemplate + Constants.TemplateExtension,
+                }
+            },
+            {
+                Consts.InterfaceImportTemplate,
+                new TemplateFileInfo
                 {
-                    Consts.InterfaceImportTemplate,
-                    new TemplateFileInfo
-                    {
-                        RelativeDirectory = Consts.InterfacePartialsDirectory,
-                        FileName = Consts.InterfaceImportTemplate + Constants.TemplateExtension
-                    }
-                },
+                    RelativeDirectory = Consts.InterfacePartialsDirectory,
+                    FileName = Consts.InterfaceImportTemplate + Constants.TemplateExtension,
+                }
+            },
+            {
+                Consts.InterfacePropertyTemplate,
+                new TemplateFileInfo
                 {
-                    Consts.InterfacePropertyTemplate,
-                    new TemplateFileInfo
-                    {
-                        RelativeDirectory = Consts.InterfacePartialsDirectory,
-                        FileName = Consts.InterfacePropertyTemplate + Constants.TemplateExtension
-                    }
-                },
-            };
-            return result;
-        }
+                    RelativeDirectory = Consts.InterfacePartialsDirectory,
+                    FileName = Consts.InterfacePropertyTemplate + Constants.TemplateExtension,
+                }
+            },
+        };
     }
 }

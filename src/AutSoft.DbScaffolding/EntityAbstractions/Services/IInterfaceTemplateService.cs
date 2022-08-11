@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions.Services
+namespace AutSoft.DbScaffolding.EntityAbstractions.Services;
+
+public interface IInterfaceTemplateService
 {
-    public interface IInterfaceTemplateService
-    {
-        string GenerateInterface(Dictionary<string, object> data);
-    }
+    string GenerateInterface(Dictionary<string, object> data);
 }

@@ -14,8 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{4E394277-2CC7-43A6-BB85-E13E44F27F9E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		..\pipelines\db-scaffolding.yml = ..\pipelines\db-scaffolding.yml
 		Directory.Build.props = Directory.Build.props
+		..\pipelines\autsoft-core-packages-cd.yml = ..\pipelines\autsoft-core-packages-cd.yml
 		Directory.Packages.props = Directory.Packages.props
 		..\pipelines\GitVersion.yml = ..\pipelines\GitVersion.yml
 		..\README.md = ..\README.md

@@ -1,9 +1,8 @@
-﻿namespace AutSoft.DbScaffolding
+﻿namespace AutSoft.DbScaffolding;
+
+public class TableBuilder
 {
-    public class TableBuilder
-    {
-        internal string TableName { get; set; }
-        internal string SchemaName { get; set; }
-        internal DbScaffoldingOptions Options { get; set; }
-    }
+    internal string TableName { get; set; }
+    internal string SchemaName { get; set; }
+    internal DbScaffoldingOptions Options { get; set; }
 }
