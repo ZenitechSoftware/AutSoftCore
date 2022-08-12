@@ -68,6 +68,9 @@ csharp_style_expression_bodied_indexers = true:suggestion
 csharp_style_expression_bodied_accessors = true:suggestion
 csharp_style_expression_bodied_lambdas = true:suggestion
 csharp_style_expression_bodied_local_functions = true:suggestion
+csharp_style_throw_expression = true:warning
+csharp_style_prefer_null_check_over_type_check = true:warning
+csharp_prefer_simple_default_expression = true:warning
 
 ##########################################
 # File Extension Settings
@@ -577,3 +580,6 @@ dotnet_diagnostic.IDE0022.severity = suggestion
 dotnet_diagnostic.CA1848.severity = suggestion
 tab_width = 4
 end_of_line = crlf
+
+# SA1615: Element return value should be documented
+dotnet_diagnostic.SA1615.severity = suggestion

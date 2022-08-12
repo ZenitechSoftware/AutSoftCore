@@ -1,5 +1,6 @@
-using AutSoft.DbScaffolding.EntityAbstractions;
-using AutSoft.DbScaffolding.EntityAbstractions.Services;
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Generators;
+using AutSoft.DbScaffolding.Services;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -12,17 +13,30 @@ using Microsoft.Extensions.DependencyInjection;
 
 using System;
 
-namespace AutSoft.DbScaffolding.Extensions;
+namespace AutSoft.DbScaffolding;
 
+/// <summary>
+/// Register all relevant services into dependency injection container
+/// </summary>
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "We do some low level stuff, so we take the risks.")]
 public static class ServiceCollectionExtensions
 {
-    public static void AddDatabaseScaffolding(this IServiceCollection services, Action<DbScaffoldingOptions> dbConfigureOptions)
+    /// <summary>
+    /// Register all relevant services into dependency injection container
+    /// </summary>
+    /// <returns>Expnaded service collection</returns>
+    public static IServiceCollection AddDatabaseScaffolding(this IServiceCollection services, Action<DbScaffoldingOptions> dbConfigureOptions)
     {
-        services.AddDatabaseScaffoldingCore<CSharpEntityTypeGenerator, CSharpDbContextGenerator>(dbConfigureOptions);
+        return services.AddDatabaseScaffoldingCore<Generators.CSharpEntityTypeGenerator, Generators.CSharpDbContextGenerator>(dbConfigureOptions);
     }
 
-    public static void AddDatabaseScaffoldingCore<TEntityGenerator, TDbContextGenerator>(this IServiceCollection services, Action<DbScaffoldingOptions> dbConfigureOptions)
+    /// <summary>
+    /// Register all relevant services into dependency injection container with custom generators
+    /// </summary>
+    /// <typeparam name="TEntityGenerator">Custom entity generator implementation</typeparam>
+    /// <typeparam name="TDbContextGenerator">Custom db context generator implementation</typeparam>
+    /// <returns>Expnaded service collection</returns>
+    public static IServiceCollection AddDatabaseScaffoldingCore<TEntityGenerator, TDbContextGenerator>(this IServiceCollection services, Action<DbScaffoldingOptions> dbConfigureOptions)
         where TEntityGenerator : class, ICSharpEntityTypeGenerator
         where TDbContextGenerator : class, ICSharpDbContextGenerator
     {
@@ -51,9 +65,11 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ICSharpEntityTypeGenerator, TEntityGenerator>();
         services.AddSingleton<ICSharpDbContextGenerator, TDbContextGenerator>();
         services.AddSingleton<IContextTransformationService, HbsContextTransformationService>();
-        services.AddSingleton<IModelCodeGenerator, CSharpModelGenerator>();
+        services.AddSingleton<IModelCodeGenerator, Generators.CSharpModelGenerator>();
         services.AddSingleton<IInterfaceGenerator, InterfaceGenerator>();
         services.AddSingleton<IInterfaceTemplateService, InterfaceTemplateService>();
         services.AddSingleton<ITemplateLanguageService, LanguageService>();
+
+        return services;
     }
 }

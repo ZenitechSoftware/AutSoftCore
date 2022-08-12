@@ -1,4 +1,4 @@
-using AutSoft.DbScaffolding.EntityAbstractions;
+using AutSoft.DbScaffolding.Configuration;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -10,10 +10,10 @@ using Microsoft.Extensions.Options;
 
 using System.Linq;
 
-namespace AutSoft.DbScaffolding;
+namespace AutSoft.DbScaffolding.Generators;
 
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "We do some low level stuff, so we take the risks.")]
-public class CSharpModelGenerator : HbsCSharpModelGenerator
+internal class CSharpModelGenerator : HbsCSharpModelGenerator
 {
     private readonly IInterfaceGenerator _interfaceGenerator;
     private readonly DbScaffoldingOptions _options;

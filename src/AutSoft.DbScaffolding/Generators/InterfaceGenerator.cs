@@ -1,4 +1,5 @@
-using AutSoft.DbScaffolding.EntityAbstractions.Services;
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Services;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -9,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions;
+namespace AutSoft.DbScaffolding.Generators;
 
-public class InterfaceGenerator : IInterfaceGenerator
+internal class InterfaceGenerator : IInterfaceGenerator
 {
     private readonly DbScaffoldingOptions _options;
     private readonly IInterfaceTemplateService _interfaceTemplateService;
@@ -28,7 +29,13 @@ public class InterfaceGenerator : IInterfaceGenerator
     {
         var templateData = new Dictionary<string, object>();
 
-        var properties = GenerateProperties(entityType, new Dictionary<string, string> { { _options.InterfaceProperties.IsDeleted, "bool" } }, useNullableReferenceTypes);
+        var properties = GenerateProperties(
+            entityType,
+            new Dictionary<string, string>
+            {
+                { _options.InterfaceProperties.IsDeleted, "bool" },
+            },
+            useNullableReferenceTypes);
 
         templateData.Add("properties", properties);
         templateData.Add("namespace", _options.InterfaceProperties.InterfaceNameSpace);
@@ -45,9 +52,9 @@ public class InterfaceGenerator : IInterfaceGenerator
             entityType,
             new Dictionary<string, string>
             {
-                { _options.InterfaceProperties.LastModAt, nameof(DateTime) },
+                { _options.InterfaceProperties.LastModAt, nameof(DateTimeOffset) },
                 { _options.InterfaceProperties.LastModBy, "string" },
-                { _options.InterfaceProperties.CreatedAt, nameof(DateTime) },
+                { _options.InterfaceProperties.CreatedAt, nameof(DateTimeOffset) },
                 { _options.InterfaceProperties.CreatedBy, "string" },
             },
             useNullableReferenceTypes);

@@ -1,3 +1,6 @@
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Generators;
+using AutSoft.DbScaffolding.Identity.Configuration;
 using AutSoft.DbScaffolding.Identity.Extensions;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
@@ -11,10 +14,10 @@ using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding.Identity;
+namespace AutSoft.DbScaffolding.Identity.Generators;
 
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "We do some low level stuff, so we take the risks.")]
-public class IdentityCSharpDbContextGenerator : CSharpDbContextGenerator
+internal class IdentityCSharpDbContextGenerator : CSharpDbContextGenerator
 {
     private readonly IOptions<HandlebarsScaffoldingOptions> _options;
     private readonly IOptions<IdentityScaffoldingOptions> _identityOptions;

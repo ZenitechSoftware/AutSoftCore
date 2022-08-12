@@ -1,4 +1,5 @@
-using AutSoft.DbScaffolding.Extensions;
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Helpers;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -11,9 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding;
+namespace AutSoft.DbScaffolding.Generators;
 
-public class CSharpDbContextGenerator : HbsCSharpDbContextGenerator
+internal class CSharpDbContextGenerator : HbsCSharpDbContextGenerator
 {
     private readonly IOptions<HandlebarsScaffoldingOptions> _options;
     private readonly IOptions<DbScaffoldingOptions> _dbScaffoldOptions;

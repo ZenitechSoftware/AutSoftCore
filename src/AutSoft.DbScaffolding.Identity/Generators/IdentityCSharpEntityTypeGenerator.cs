@@ -1,4 +1,8 @@
-﻿using AutSoft.DbScaffolding.Identity.Extensions;
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Generators;
+using AutSoft.DbScaffolding.Helpers;
+using AutSoft.DbScaffolding.Identity.Configuration;
+using AutSoft.DbScaffolding.Identity.Extensions;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -11,9 +15,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding.Identity;
+namespace AutSoft.DbScaffolding.Identity.Generators;
 
-public class IdentityCSharpEntityTypeGenerator : CSharpEntityTypeGenerator
+internal class IdentityCSharpEntityTypeGenerator : CSharpEntityTypeGenerator
 {
     private readonly IOptions<IdentityScaffoldingOptions> _identityOptions;
 
@@ -35,9 +39,7 @@ public class IdentityCSharpEntityTypeGenerator : CSharpEntityTypeGenerator
         Check.NotNull(entityType, nameof(entityType));
 
         if (UseDataAnnotations)
-        {
             GenerateEntityTypeDataAnnotations(entityType);
-        }
 
         var identityKeyType = entityType.Model.FindIdentityKeyType(_identityOptions.Value.UserTableName);
         var lookup = _identityOptions.Value.CreateIdentityTableNameLookup(identityKeyType);

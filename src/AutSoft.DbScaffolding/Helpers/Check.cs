@@ -11,10 +11,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding;
+namespace AutSoft.DbScaffolding.Helpers;
 
 [DebuggerStepThrough]
-public static class Check
+internal static class Check
 {
     [ContractAnnotation("value:null => halt")]
     public static T NotNull<T>([NoEnumeration] T value, [InvokerParameterName][NotNull] string parameterName)
@@ -100,8 +100,6 @@ public static class Check
     public static void DebugAssert([System.Diagnostics.CodeAnalysis.DoesNotReturnIf(false)] bool condition, string message)
     {
         if (!condition)
-        {
             throw new InvalidOperationException($"Check.DebugAssert failed: {message}");
-        }
     }
 }

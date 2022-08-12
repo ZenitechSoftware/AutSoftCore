@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore.Design;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions.Services;
+namespace AutSoft.DbScaffolding.Services;
 
-public class InterfaceTemplateService : HbsTemplateService, IInterfaceTemplateService
+internal class InterfaceTemplateService : HbsTemplateService, IInterfaceTemplateService
 {
     public InterfaceTemplateService(ITemplateFileService fileService, ITemplateLanguageService languageService)
         : base(fileService, languageService)

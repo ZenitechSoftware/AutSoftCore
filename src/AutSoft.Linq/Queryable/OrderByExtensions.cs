@@ -35,6 +35,7 @@ public static class OrderByExtensions
     /// <param name="keySelector">Expression of the ordering key</param>
     /// <param name="orderDirection">Direction of ordering represents with <see cref="OrderDirection"/> enum</param>
     /// <returns><see cref="IQueryable{T}" /> with ordering information</returns>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S4136:Method overloads should be grouped together", Justification = "ThenBy is more related than the other OrderBy methods")]
     public static IOrderedQueryable<TSource> OrderBy<TSource, TKey>(
         this IQueryable<TSource> source,
         Expression<Func<TSource, TKey>> keySelector,

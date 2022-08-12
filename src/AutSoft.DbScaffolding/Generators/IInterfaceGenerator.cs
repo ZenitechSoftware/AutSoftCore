@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions;
+namespace AutSoft.DbScaffolding.Generators;
 
-public interface IInterfaceGenerator
+internal interface IInterfaceGenerator
 {
     string GenerateSoftDeletableInterface(IEntityType entityType, bool useNullableReferenceTypes);
     string GenerateAuditableInterface(IEntityType entityType, bool useNullableReferenceTypes);

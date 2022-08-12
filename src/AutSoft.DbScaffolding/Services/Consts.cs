@@ -1,6 +1,6 @@
-﻿namespace AutSoft.DbScaffolding.EntityAbstractions.Services;
+namespace AutSoft.DbScaffolding.Services;
 
-public static class Consts
+internal static class Consts
 {
     public const string InterfaceTemplate = "Interface";
 

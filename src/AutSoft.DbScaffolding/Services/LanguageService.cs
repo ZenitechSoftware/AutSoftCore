@@ -3,9 +3,9 @@ using EntityFrameworkCore.Scaffolding.Handlebars.Helpers;
 
 using System.Collections.Generic;
 
-namespace AutSoft.DbScaffolding.EntityAbstractions.Services;
+namespace AutSoft.DbScaffolding.Services;
 
-public class LanguageService : CSharpTemplateLanguageService
+internal class LanguageService : CSharpTemplateLanguageService
 {
     public Dictionary<string, TemplateFileInfo> GetInterfaceTemplateFileInfo()
     {

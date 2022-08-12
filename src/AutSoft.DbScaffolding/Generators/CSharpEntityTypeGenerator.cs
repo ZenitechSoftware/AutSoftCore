@@ -1,4 +1,5 @@
-using AutSoft.DbScaffolding.Extensions;
+using AutSoft.DbScaffolding.Configuration;
+using AutSoft.DbScaffolding.Helpers;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
@@ -12,9 +13,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutSoft.DbScaffolding;
+namespace AutSoft.DbScaffolding.Generators;
 
-public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
+internal class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
 {
     private readonly IOptions<DbScaffoldingOptions> _dbScaffoldingOptions;
 
@@ -39,9 +40,7 @@ public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
             PropertyAnnotationsData = new List<Dictionary<string, object>>();
 
             if (UseDataAnnotations)
-            {
                 GeneratePropertyDataAnnotations(property);
-            }
 
             var enumType = _dbScaffoldingOptions
                 .Value
@@ -49,9 +48,7 @@ public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
                 .GetValueOrDefault(new DbColumn(entityType.GetSchemaName(), entityType.Name, property.Name));
 
             if (enumType != null && Nullable.GetUnderlyingType(property.ClrType) != null)
-            {
                 enumType = typeof(Nullable<>).MakeGenericType(enumType);
-            }
 
             var spatialType = _dbScaffoldingOptions
                 .Value
@@ -59,9 +56,7 @@ public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
                 .GetValueOrDefault(new DbColumn(entityType.GetSchemaName(), entityType.Name, property.Name));
 
             if (spatialType != null && Nullable.GetUnderlyingType(property.ClrType) != null)
-            {
                 spatialType = typeof(Nullable<>).MakeGenericType(spatialType);
-            }
 
             var propertyType = CSharpHelper.Reference(enumType ?? spatialType ?? property.ClrType);
             if (UseNullableReferenceTypes
@@ -71,9 +66,8 @@ public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
                 propertyType += "?";
             }
 
-            var propertyIsNullable = property.ClrType.IsValueType
-                || (UseNullableReferenceTypes
-                 && property.IsNullable);
+            var propertyIsNullable = property.ClrType.IsValueType || (UseNullableReferenceTypes && property.IsNullable);
+
             properties.Add(new Dictionary<string, object>
             {
                 { "property-type", propertyType },
@@ -117,9 +111,7 @@ public class CSharpEntityTypeGenerator : HbsCSharpEntityTypeGenerator
         Check.NotNull(entityType, nameof(entityType));
 
         if (UseDataAnnotations)
-        {
             GenerateEntityTypeDataAnnotations(entityType);
-        }
 
         var transformedEntityName = EntityTypeTransformationService.TransformTypeEntityName(entityType.Name);
 

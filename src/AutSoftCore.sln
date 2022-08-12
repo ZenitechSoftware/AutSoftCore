@@ -18,10 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{4E394277
 		Directory.Build.props = Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
 		..\pipelines\GitVersion.yml = ..\pipelines\GitVersion.yml
+		LICENSE.md = LICENSE.md
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutSoft.Common", "AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Common", "AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

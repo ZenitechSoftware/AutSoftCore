@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 using System;
 using System.Linq;
 
 namespace AutSoft.DbScaffolding.Identity.Extensions;
 
-public static class IModelExtensions
+internal static class ModelExtensions
 {
     public static Type FindIdentityKeyType(this IModel model, string userTableName)
     {
