@@ -20,7 +20,12 @@ public static class FirstAndSingleExtensions
     /// <param name="entityId">Identifier of the requested element</param>
     /// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for the task to complete.</param>
     /// <exception cref="EntityNotFoundException">Throws when no result found</exception>
-    public static async Task<T> SingleEntityAsync<T>(this IQueryable<T> source, Expression<Func<T, bool>> predicate, long entityId, CancellationToken cancellationToken = default)
+    /// <returns>A <see cref="Task"/> representing the asynchronous operation. Wraps the requested entity.</returns>
+    public static async Task<T> SingleEntityAsync<T>(
+        this IQueryable<T> source,
+        Expression<Func<T, bool>> predicate,
+        long entityId,
+        CancellationToken cancellationToken = default)
     {
         return await source.SingleOrDefaultAsync(predicate, cancellationToken)
             ?? throw EntityNotFoundException.CreateForType<T>(entityId);
@@ -35,7 +40,12 @@ public static class FirstAndSingleExtensions
     /// <param name="queryParameters">Query parameters of the requested element</param>
     /// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for the task to complete.</param>
     /// <exception cref="EntityNotFoundException">Throws when no result found</exception>
-    public static async Task<T> SingleEntityAsync<T>(this IQueryable<T> source, Expression<Func<T, bool>> predicate, object[] queryParameters, CancellationToken cancellationToken = default)
+    /// <returns>A <see cref="Task"/> representing the asynchronous operation. Wraps the requested entity.</returns>
+    public static async Task<T> SingleEntityAsync<T>(
+        this IQueryable<T> source,
+        Expression<Func<T, bool>> predicate,
+        object[] queryParameters,
+        CancellationToken cancellationToken = default)
     {
         return await source.SingleAsync(predicate, cancellationToken)
             ?? throw EntityNotFoundException.CreateForTypeCustomParams<T>(queryParameters);
