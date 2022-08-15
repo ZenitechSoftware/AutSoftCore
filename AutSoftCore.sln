@@ -1,28 +1,34 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.All", "AutSoft.All\AutSoft.All.csproj", "{D5954B94-5C9C-4787-A2A6-3CC7D00EEFEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.All", ".\src\AutSoft.All\AutSoft.All.csproj", "{D5954B94-5C9C-4787-A2A6-3CC7D00EEFEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq", "AutSoft.Linq\AutSoft.Linq.csproj", "{A03DAE6A-B41A-4037-B639-F973C6961BB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq", ".\src\AutSoft.Linq\AutSoft.Linq.csproj", "{A03DAE6A-B41A-4037-B639-F973C6961BB2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding", "AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj", "{AF506C20-DD0A-4EA8-994E-E38ADC225962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding", ".\src\AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj", "{AF506C20-DD0A-4EA8-994E-E38ADC225962}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding.Identity", "AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj", "{FF908529-9DDE-4DFB-ABA9-A2045E715B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding.Identity", ".\src\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj", "{FF908529-9DDE-4DFB-ABA9-A2045E715B21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Common", ".\src\AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7029D162-AEB0-4B68-A21E-90ABCD21DAD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq.Tests", ".\test\AutSoft.Linq.Tests\AutSoft.Linq.Tests.csproj", "{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{4E394277-2CC7-43A6-BB85-E13E44F27F9E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		..\pipelines\autsoft-core-packages-cd.yml = ..\pipelines\autsoft-core-packages-cd.yml
-		Directory.Build.props = Directory.Build.props
-		Directory.Packages.props = Directory.Packages.props
-		..\pipelines\GitVersion.yml = ..\pipelines\GitVersion.yml
+		pipelines\autsoft-core-packages-cd.yml = pipelines\autsoft-core-packages-cd.yml
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Packages.props = src\Directory.Packages.props
+		pipelines\GitVersion.yml = pipelines\GitVersion.yml
 		LICENSE.md = LICENSE.md
-		..\README.md = ..\README.md
+		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Common", "AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,9 +56,21 @@ Global
 		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5954B94-5C9C-4787-A2A6-3CC7D00EEFEA} = {C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}
+		{A03DAE6A-B41A-4037-B639-F973C6961BB2} = {C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}
+		{AF506C20-DD0A-4EA8-994E-E38ADC225962} = {C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}
+		{FF908529-9DDE-4DFB-ABA9-A2045E715B21} = {C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}
+		{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F} = {C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}
+		{D4D62897-E6D6-484E-AE4E-F3A0347ADD88} = {7029D162-AEB0-4B68-A21E-90ABCD21DAD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4767DF1-41A6-4BF0-A957-2718986D8BC7}
