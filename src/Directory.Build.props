@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup>
+    <Version>$(BUILD_BUILDNUMBER)</Version>
+    <Company>AutSoft Ltd.</Company>
+    <Authors>AutSoft Ltd.</Authors>
+    <PackageIcon>AutSoft-logo.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIconUrl />
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../AutSoft-logo.png">
+      <Visible>False</Visible>
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="../../LICENSE.md">
+      <Visible>False</Visible>
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

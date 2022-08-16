@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+{{#if use-data-annotations}}
+using System.ComponentModel.DataAnnotations;
+{{/if}}
+using System.ComponentModel.DataAnnotations.Schema;
+{{#each imports}}
+using {{import}};
+{{/each}}
