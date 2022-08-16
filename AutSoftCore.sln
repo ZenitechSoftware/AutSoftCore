@@ -1,21 +1,23 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.All", ".\src\AutSoft.All\AutSoft.All.csproj", "{D5954B94-5C9C-4787-A2A6-3CC7D00EEFEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.All", "src\AutSoft.All\AutSoft.All.csproj", "{D5954B94-5C9C-4787-A2A6-3CC7D00EEFEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq", ".\src\AutSoft.Linq\AutSoft.Linq.csproj", "{A03DAE6A-B41A-4037-B639-F973C6961BB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq", "src\AutSoft.Linq\AutSoft.Linq.csproj", "{A03DAE6A-B41A-4037-B639-F973C6961BB2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding", ".\src\AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj", "{AF506C20-DD0A-4EA8-994E-E38ADC225962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding", "src\AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj", "{AF506C20-DD0A-4EA8-994E-E38ADC225962}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding.Identity", ".\src\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj", "{FF908529-9DDE-4DFB-ABA9-A2045E715B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.DbScaffolding.Identity", "src\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj", "{FF908529-9DDE-4DFB-ABA9-A2045E715B21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Common", ".\src\AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Common", "src\AutSoft.Core\AutSoft.Common.csproj", "{28371EF8-D3D3-40CA-AAE9-29D80AE0BF3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7029D162-AEB0-4B68-A21E-90ABCD21DAD3}"
+	ProjectSection(SolutionItems) = preProject
+		test\.editorconfig = test\.editorconfig
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq.Tests", ".\test\AutSoft.Linq.Tests\AutSoft.Linq.Tests.csproj", "{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Linq.Tests", "test\AutSoft.Linq.Tests\AutSoft.Linq.Tests.csproj", "{D4D62897-E6D6-484E-AE4E-F3A0347ADD88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C46AA3F7-CBFE-428A-AA49-D1A1D40AB8A6}"
 EndProject
