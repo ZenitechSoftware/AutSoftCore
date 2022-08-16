@@ -29,7 +29,7 @@ public partial class OrderByFromEFModel : OrderByExtensionsTests
             .ToList();
 
         // Assert
-        ordered.Should().HaveCount(Subject.Count());
+        ordered.Should().HaveCount(Subject.Count()).And.HaveCountGreaterThan(0);
         if (orderDirection is OrderDirection.Ascending)
         {
             ordered.Should().BeInAscendingOrder(ordering.expectedOrderExpression);
