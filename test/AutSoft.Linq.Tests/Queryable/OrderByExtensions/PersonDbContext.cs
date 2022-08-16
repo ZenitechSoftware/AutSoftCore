@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
 
@@ -8,7 +8,8 @@ internal class PersonDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseInMemoryDatabase("test");
+        // Every DbContext instance works on a different in-memory db
+        optionsBuilder.UseInMemoryDatabase(Guid.NewGuid().ToString());
 
         base.OnConfiguring(optionsBuilder);
     }

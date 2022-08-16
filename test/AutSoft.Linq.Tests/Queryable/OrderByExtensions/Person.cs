@@ -1,6 +1,6 @@
 namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
 
-internal class Person
+public class Person
 {
     public int Id { get; set; }
     public string? Name { get; set; }

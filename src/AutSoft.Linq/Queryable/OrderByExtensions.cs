@@ -80,7 +80,7 @@ public static class OrderByExtensions
     public static IOrderedQueryable<TSource> OrderBy<TSource>(
         this IQueryable<TSource> source,
         PageRequest pageRequest,
-        Expression<Func<TSource, object>> defaultOrderingSelector)
+        Expression<Func<TSource, object?>> defaultOrderingSelector)
     {
         return source.OrderBy(
             string.IsNullOrEmpty(pageRequest.OrderBy)
@@ -103,7 +103,7 @@ public static class OrderByExtensions
     public static IOrderedQueryable<TSource> OrderBy<TSource, TDto>(
         this IQueryable<TSource> source,
         PageRequest pageRequest,
-        Expression<Func<TSource, object>> defaultOrderingSelector,
+        Expression<Func<TSource, object?>> defaultOrderingSelector,
         IConfigurationProvider mappings)
     {
         var orderKeySelector = GetOrderKeySelector<TSource, TDto>(pageRequest, defaultOrderingSelector, mappings);
@@ -126,7 +126,7 @@ public static class OrderByExtensions
     public static IOrderedQueryable<TSource> OrderBy<TSource, TDto>(
        this IQueryable<TSource> source,
        PageRequest pageRequest,
-       Expression<Func<TSource, object>> defaultOrderingSelector,
+       Expression<Func<TSource, object?>> defaultOrderingSelector,
        OrderDirection defaultOrderDirection,
        IConfigurationProvider mappings)
     {
@@ -138,9 +138,9 @@ public static class OrderByExtensions
         return source.OrderBy(orderKeySelector, pageRequest.OrderDirection);
     }
 
-    private static Expression<Func<TSource, object>> GetOrderKeySelector<TSource, TDto>(
+    private static Expression<Func<TSource, object?>> GetOrderKeySelector<TSource, TDto>(
         PageRequest pageRequest,
-        Expression<Func<TSource, object>> defaultOrderingSelector,
+        Expression<Func<TSource, object?>> defaultOrderingSelector,
         IConfigurationProvider mappings)
     {
         if (!string.IsNullOrEmpty(pageRequest.OrderBy))
@@ -161,7 +161,7 @@ public static class OrderByExtensions
                 ?.CustomMapExpression;
 
             orderKeySelector = expression != null
-                ? Expression.Lambda<Func<TSource, object>>(Expression.Convert(expression.Body, typeof(object)), expression.Parameters)
+                ? Expression.Lambda<Func<TSource, object?>>(Expression.Convert(expression.Body, typeof(object)), expression.Parameters)
                 : e => EF.Property<object>(e!, pageRequest.OrderBy);
         }
 

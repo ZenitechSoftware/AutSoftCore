@@ -1,8 +1,8 @@
-﻿using AutSoft.Linq.Queryable;
+using AutSoft.Linq.Queryable;
 
 namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
 
-internal class PersonDto
+public class PersonDto
 {
     public int Id { get; set; }
     public string? Name { get; set; }

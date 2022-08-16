@@ -40,6 +40,7 @@ public partial class OrderByExtensionsTests : IDisposable
         {
             if (disposing)
             {
+                DbContext.Database.EnsureDeleted();
                 DbContext.Dispose();
             }
 
