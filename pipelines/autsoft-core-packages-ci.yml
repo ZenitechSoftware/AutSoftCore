@@ -1,12 +1,9 @@
-trigger: master
+trigger: none
 
-name: '$(GitVersion.MajorMinorPatch)'
+name: '$(GitVersion.MajorMinorPatch)-pr$(System.PullRequest.PullRequestId)-$(Rev:r)'
 
 pool:
   vmImage: 'windows-latest'
-
-variables:
-  vstsFeed: 'af9a044c-47df-4b2e-bae8-1ea6da771ce7'
 
 steps:
 - task: gitversion/setup@0
@@ -19,6 +16,12 @@ steps:
     configFilePath: 'pipelines/GitVersion.yml'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  inputs:
+    command: test
+    packagesToPack: '$(Build.Repository.LocalPath)/src/**/*.Tests.csproj'
+
+- task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
   inputs:
     command: pack
@@ -29,10 +32,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'packages'
     publishLocation: 'Container'
-
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet push'
-  inputs:
-    command: push
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '$(vstsFeed)'
