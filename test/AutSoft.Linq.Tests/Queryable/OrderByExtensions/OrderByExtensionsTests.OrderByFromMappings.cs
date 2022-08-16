@@ -15,7 +15,7 @@ public partial class OrderByFromMappings : OrderByExtensionsTests
     [InlineData(nameof(PersonDto.Id))]
     [InlineData(nameof(PersonDto.Name))]
     [InlineData(nameof(PersonDto.Age))]
-    public async Task Should_ReturnOrdered(string orderBy)
+    public void Should_ReturnOrdered(string orderBy)
     {
         // Act
         var ordered = Subject
@@ -27,7 +27,7 @@ public partial class OrderByFromMappings : OrderByExtensionsTests
         ordered.Should().HaveCount(Subject.Count());
         ordered.Should().BeInAscendingOrder(orderBy switch
         {
-            nameof(PersonDto.Id) => (Expression<Func<PersonDto, object>>)(p => p.Id),
+            nameof(PersonDto.Id) => (Expression<Func<PersonDto, object?>>)(p => p.Id),
             nameof(PersonDto.Name) => p => p.Name,
             nameof(PersonDto.Age) => p => p.Age,
             _ => throw new NotSupportedException("Not valid test case input"),

@@ -32,8 +32,25 @@ public partial class OrderByExtensionsTests : IDisposable
     private protected IMapper Mapper { get; }
     private protected PersonDbContext DbContext { get; }
 
+    private bool _disposedValue;
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposedValue)
+        {
+            if (disposing)
+            {
+                DbContext.Dispose();
+            }
+
+            _disposedValue = true;
+        }
+    }
+
     public void Dispose()
     {
-        DbContext.Dispose();
+        // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
     }
 }
