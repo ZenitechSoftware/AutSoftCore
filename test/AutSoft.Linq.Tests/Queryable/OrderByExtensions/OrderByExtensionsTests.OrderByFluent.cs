@@ -5,23 +5,26 @@ using FluentAssertions;
 
 namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
 
-public partial class OrderByFluent : OrderByExtensionsTests
+public partial class OrderByExtensionsTests
 {
-    [Theory]
-    [InlineData(OrderDirection.Ascending)]
-    [InlineData(OrderDirection.Descending)]
-    public void Should_ReturnOrdered(OrderDirection orderDirection)
+    public class OrderByFluent : OrderByExtensionsTests
     {
-        // Act
-        var ordered = Subject.OrderBy(x => x.Name, orderDirection).ToList();
-
-        // Assert
-        ordered.Should().HaveCount(Subject.Count());
-        _ = orderDirection switch
+        [Theory]
+        [InlineData(OrderDirection.Ascending)]
+        [InlineData(OrderDirection.Descending)]
+        public void Should_ReturnOrdered(OrderDirection orderDirection)
         {
-            OrderDirection.Ascending => ordered.Should().BeInAscendingOrder(p => p.Name),
-            OrderDirection.Descending => ordered.Should().BeInDescendingOrder(p => p.Name),
-            _ => throw new NotSupportedException(),
-        };
+            // Act
+            var ordered = Subject.OrderBy(x => x.Name, orderDirection).ToList();
+
+            // Assert
+            ordered.Should().HaveCount(Subject.Count());
+            _ = orderDirection switch
+            {
+                OrderDirection.Ascending => ordered.Should().BeInAscendingOrder(p => p.Name),
+                OrderDirection.Descending => ordered.Should().BeInDescendingOrder(p => p.Name),
+                _ => throw new NotSupportedException(),
+            };
+        }
     }
 }

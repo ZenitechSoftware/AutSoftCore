@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
+namespace AutSoft.Linq.Tests.Queryable;
 
 internal class PersonDbContext : DbContext
 {

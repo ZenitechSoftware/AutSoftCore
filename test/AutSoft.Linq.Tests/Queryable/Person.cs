@@ -1,4 +1,4 @@
-namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
+namespace AutSoft.Linq.Tests.Queryable;
 
 public class Person
 {

@@ -1,6 +1,6 @@
 using AutSoft.Linq.Queryable;
 
-namespace AutSoft.Linq.Tests.Queryable.OrderByExtensions;
+namespace AutSoft.Linq.Tests.Queryable;
 
 public class PersonDto
 {
