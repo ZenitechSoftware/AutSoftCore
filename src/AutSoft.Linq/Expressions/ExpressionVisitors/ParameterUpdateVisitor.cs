@@ -5,7 +5,7 @@ namespace AutSoft.Linq.Expressions.ExpressionVisitors;
 /// <summary>
 /// An <see cref="ExpressionVisitor"/>, which update a <see cref="ParameterExpression"/>
 /// </summary>
-public class ParameterUpdateVisitor : ExpressionVisitor
+internal class ParameterUpdateVisitor : ExpressionVisitor
 {
     private readonly ParameterExpression _oldParameter;
     private readonly ParameterExpression _newParameter;

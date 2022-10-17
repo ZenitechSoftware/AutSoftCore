@@ -5,7 +5,7 @@ namespace AutSoft.Linq.Expressions.ExpressionVisitors;
 /// <summary>
 /// An <see cref="ExpressionVisitor"/>, which swap the visited <see cref="Expression"/> to an other
 /// </summary>
-public class SwapVisitor : ExpressionVisitor
+internal class SwapVisitor : ExpressionVisitor
 {
     private readonly Expression _source;
     private readonly Expression _replacement;
