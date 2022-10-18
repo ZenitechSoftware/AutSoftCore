@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <Version>$(BUILD_BUILDNUMBER)</Version>
+    <Version>$(GITVERSION_MAJORMINORPATCH)</Version>
     <Company>AutSoft Ltd.</Company>
     <Copyright>Copyright (c) AutSoft Ltd. 2022</Copyright>
     <Authors>AutSoft Ltd.</Authors>
