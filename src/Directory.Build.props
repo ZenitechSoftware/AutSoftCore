@@ -2,7 +2,12 @@
   <PropertyGroup>
     <Version>$(BUILD_BUILDNUMBER)</Version>
     <Company>AutSoft Ltd.</Company>
+    <Copyright>Copyright (c) AutSoft Ltd. 2022</Copyright>
     <Authors>AutSoft Ltd.</Authors>
+    <Description>Helper libraries for .NET applications</Description>
+    <PackageProjectUrl>https://github.com/AutSoft/AutSoftCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AutSoft/AutSoftCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageIcon>AutSoft-logo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIconUrl />
