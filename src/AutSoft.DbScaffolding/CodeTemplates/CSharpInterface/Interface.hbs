@@ -13,6 +13,8 @@ namespace {{namespace}}
 {
     public interface {{interface}}
     {
-{{{> properties}}}
+{{#each properties}}
+        public {{property-type}} {{property-name}} { get; set; }
+{{/each}}
     }
 }
