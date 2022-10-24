@@ -42,7 +42,7 @@ public static class ServiceCollectionExtensions
     {
         var generatorType = typeof(TEntityGenerator);
         var templateAssembly = generatorType.Assembly;
-        var templateNamespace = generatorType.Namespace;
+        var templateNamespace = templateAssembly.GetName().Name;
 
         services.AddHandlebarsScaffolding((options) =>
         {
