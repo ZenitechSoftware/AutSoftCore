@@ -1,3 +1,5 @@
+using AutSoft.DbScaffolding.EntityAbstractions;
+
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
 using System;
