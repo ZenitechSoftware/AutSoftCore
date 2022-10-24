@@ -1,4 +1,6 @@
-namespace AutSoft.DbScaffolding.Configuration;
+#pragma warning disable IDE0130 // Namespace does not match folder structure
+namespace AutSoft.DbScaffolding.EntityAbstractions;
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 
 /// <summary>
 /// Configure ISoftDeletableEntity and IAuditableEntity interface generation
