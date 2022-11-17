@@ -45,6 +45,9 @@
     <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars">
       <Version>6.0.3</Version>
     </PackageVersion>
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <Version>6.0.8</Version>
+    </PackageVersion>
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design">
       <Version>6.0.8</Version>
     </PackageVersion>
