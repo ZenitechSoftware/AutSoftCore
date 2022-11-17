@@ -1,32 +1,18 @@
 <Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Roslynator.Analyzers" Version="4.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.43.0.51858">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageVersion Include="AutoMapper" Version="11.0.1" />
+    <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars" Version="6.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageVersion Include="Stateless" Version="5.12.0" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageVersion Include="Microsoft.NET.Test.Sdk">
-      <Version>17.3.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="xunit">
-      <Version>2.4.2</Version>
-    </PackageVersion>
-    <PackageVersion Include="xunit.runner.visualstudio">
-      <Version>2.4.5</Version>
-    </PackageVersion>
-  </ItemGroup>
+
 </Project>
