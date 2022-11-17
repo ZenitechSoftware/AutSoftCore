@@ -1,83 +1,18 @@
 <Project>
-  
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Roslynator.Analyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="EntityFrameworkCore.Scaffolding.Handlebars">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageVersion Include="AutoMapper">
-      <Version>11.0.1</Version>
-    </PackageVersion>
-    <PackageVersion Include="DotNet.ReproducibleBuilds">
-      <Version>1.1.1</Version>
-    </PackageVersion>
-    <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars">
-      <Version>6.0.3</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
-      <Version>6.0.8</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <Version>6.0.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design">
-      <Version>6.0.8</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore">
-      <Version>6.0.8</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer">
-      <Version>6.0.8</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite">
-      <Version>6.0.8</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-      <Version>6.0.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.NET.Test.Sdk">
-      <Version>17.3.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="Roslynator.Analyzers">
-      <Version>4.1.1</Version>
-    </PackageVersion>
-    <PackageVersion Include="SonarAnalyzer.CSharp">
-      <Version>8.43.0.51858</Version>
-    </PackageVersion>
-    <PackageVersion Include="Stateless">
-      <Version>5.12.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="StyleCop.Analyzers">
-      <Version>1.2.0-beta.435</Version>
-    </PackageVersion>
-    <PackageVersion Include="xunit">
-      <Version>2.4.2</Version>
-    </PackageVersion>
-    <PackageVersion Include="xunit.runner.visualstudio">
-      <Version>2.4.5</Version>
-    </PackageVersion>
+    <PackageVersion Include="AutoMapper" Version="11.0.1" />
+    <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars" Version="6.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageVersion Include="Stateless" Version="5.12.0" />
   </ItemGroup>
 
 </Project>
