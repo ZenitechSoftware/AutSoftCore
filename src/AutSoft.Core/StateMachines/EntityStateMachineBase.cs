@@ -45,10 +45,10 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
               stateMutator: state => statePropertySelector.GetPropertyAccess().SetValue(entity, state))
     {
         if (stateModifiedDatePropertySelector != null && timeProvider == null)
-            throw new ArgumentNullException(nameof(timeProvider), $"{nameof(stateModifiedDatePropertySelector)} megadása esetén a {nameof(timeProvider)} paraméter nem lehet null");
+            throw new ArgumentNullException(nameof(timeProvider), $"If {nameof(stateModifiedDatePropertySelector)} is specified, the {nameof(timeProvider)} parameter cannot be null");
 
         if (stateModifiedDatePropertySelector != null && dbContext == null)
-            throw new ArgumentNullException(nameof(timeProvider), $"{nameof(stateModifiedDatePropertySelector)} megadása esetén a {nameof(dbContext)} paraméter nem lehet null");
+            throw new ArgumentNullException(nameof(timeProvider), $"If {nameof(stateModifiedDatePropertySelector)} is specified, the {nameof(dbContext)} parameter cannot be null");
 
         OnTransitionedAsync(async _ =>
         {
@@ -62,7 +62,7 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
         {
             var id = entity.GetType().GetProperty("Id")?.GetValue(entity);
             throw new BusinessException(
-                exceptionMessage ?? $"A kívánt állapotátmenet nem engedélyezett! (entitás: {entity.GetType().Name} id: {id} állapot: {s} trigger: {t})", "Hibás művelet!");
+                exceptionMessage ?? $"The desired state transition is not allowed! (entity: {entity.GetType().Name} id: {id} state: {s} trigger: {t})", "Incorrect operation!");
         });
     }
 
