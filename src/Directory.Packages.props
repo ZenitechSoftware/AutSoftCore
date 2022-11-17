@@ -18,6 +18,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="EntityFrameworkCore.Scaffolding.Handlebars">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   
   <ItemGroup>
@@ -36,10 +42,19 @@
     <PackageVersion Include="StyleCop.Analyzers">
       <Version>1.2.0-beta.435</Version>
     </PackageVersion>
-  </ItemGroup>
-  
-  <ItemGroup>
+    <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars">
+      <Version>6.0.3</Version>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design">
+      <Version>6.0.8</Version>
+    </PackageVersion>
     <PackageVersion Include="Microsoft.EntityFrameworkCore">
+      <Version>6.0.8</Version>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <Version>6.0.8</Version>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite">
       <Version>6.0.8</Version>
     </PackageVersion>
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions">
@@ -58,5 +73,5 @@
       <Version>2.4.5</Version>
     </PackageVersion>
   </ItemGroup>
-  
+
 </Project>
