@@ -27,26 +27,20 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageVersion Include="AutoMapper">
+      <Version>11.0.1</Version>
+    </PackageVersion>
     <PackageVersion Include="DotNet.ReproducibleBuilds">
       <Version>1.1.1</Version>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <Version>6.0.0</Version>
-    </PackageVersion>
-    <PackageVersion Include="Roslynator.Analyzers">
-      <Version>4.1.1</Version>
-    </PackageVersion>
-    <PackageVersion Include="SonarAnalyzer.CSharp">
-      <Version>8.43.0.51858</Version>
-    </PackageVersion>
-    <PackageVersion Include="StyleCop.Analyzers">
-      <Version>1.2.0-beta.435</Version>
     </PackageVersion>
     <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars">
       <Version>6.0.3</Version>
     </PackageVersion>
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
       <Version>6.0.8</Version>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <Version>6.0.0</Version>
     </PackageVersion>
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design">
       <Version>6.0.8</Version>
@@ -66,8 +60,17 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk">
       <Version>17.3.0</Version>
     </PackageVersion>
+    <PackageVersion Include="Roslynator.Analyzers">
+      <Version>4.1.1</Version>
+    </PackageVersion>
+    <PackageVersion Include="SonarAnalyzer.CSharp">
+      <Version>8.43.0.51858</Version>
+    </PackageVersion>
     <PackageVersion Include="Stateless">
       <Version>5.12.0</Version>
+    </PackageVersion>
+    <PackageVersion Include="StyleCop.Analyzers">
+      <Version>1.2.0-beta.435</Version>
     </PackageVersion>
     <PackageVersion Include="xunit">
       <Version>2.4.2</Version>
