@@ -68,9 +68,6 @@ public class AnyPoliciesPolicyProvider : IAuthorizationPolicyProvider
         {
             var policies = GetPolicyNamesFromDynamicPolicy(policyName).ToArray();
             var policy = new AuthorizationPolicyBuilder().AddRequirements(new AnyPoliciesRequirement(policies));
-
-            policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
-
             return Task.FromResult((AuthorizationPolicy?)policy.Build());
         }
 
