@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutSoft.AspNetCore.Auth\AutSoft.AspNetCore.Auth.csproj" />
     <ProjectReference Include="..\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj" />
     <ProjectReference Include="..\AutSoft.Linq\AutSoft.Linq.csproj" />
   </ItemGroup>
