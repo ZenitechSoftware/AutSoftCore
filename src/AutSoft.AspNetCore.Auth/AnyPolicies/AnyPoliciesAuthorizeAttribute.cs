@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace AutSoft.Common.AnyPolicies;
+namespace AutSoft.AspNetCore.Auth.AnyPolicies;
 
 /// <summary>
 /// The policies, which are specified in the constructor or <see cref="Policies"/> property
@@ -20,7 +20,6 @@ public class AnyPoliciesAuthorizeAttribute : AuthorizeAttribute
     public string[] Policies
     {
         get => _policies;
-
         set
         {
             _policies = value;

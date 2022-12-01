@@ -1,7 +1,5 @@
-using AutSoft.Common.AnyPolicies;
 using AutSoft.Common.Time;
 
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AutSoft.Common;
@@ -17,11 +15,6 @@ public static class ServiceCollectionExtensions
     /// <returns>Expanded service collection</returns>
     public static IServiceCollection AddAutSoftCommon(this IServiceCollection services)
     {
-        services.AddSingleton<ITimeProvider, TimeProvider>();
-
-        services.AddSingleton<IAuthorizationPolicyProvider, AnyPoliciesPolicyProvider>();
-        services.AddSingleton<IAuthorizationHandler, AnyPoliciesAuthorizationHandler>();
-
-        return services;
+        return services.AddSingleton<ITimeProvider, TimeProvider>();
     }
 }

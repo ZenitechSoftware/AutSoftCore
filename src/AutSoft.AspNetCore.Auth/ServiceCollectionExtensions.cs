@@ -1,9 +1,9 @@
-using AutSoft.AspNetCore.Auth;
-using AutSoft.Common;
+using AutSoft.AspNetCore.Auth.AnyPolicies;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AutSoft.All;
+namespace AutSoft.AspNetCore.Auth;
 
 /// <summary>
 /// Register all relevant services into dependency injection container
@@ -14,10 +14,10 @@ public static class ServiceCollectionExtensions
     /// Register all relevant services into dependency injection container
     /// </summary>
     /// <returns>Expanded service collection</returns>
-    public static IServiceCollection AddAutSoftAll(this IServiceCollection services)
+    public static IServiceCollection AddAutSoftAspNetCoreAuth(this IServiceCollection services)
     {
-        services.AddAutSoftAspNetCoreAuth();
-        services.AddAutSoftCommon();
+        services.AddSingleton<IAuthorizationPolicyProvider, AnyPoliciesPolicyProvider>();
+        services.AddSingleton<IAuthorizationHandler, AnyPoliciesAuthorizationHandler>();
 
         return services;
     }

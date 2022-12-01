@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AutSoft.Common.AnyPolicies;
+namespace AutSoft.AspNetCore.Auth.AnyPolicies;
 
 /// <summary>
 /// Evulate the policies in the <see cref="AnyPoliciesRequirement"/> with OR relationship,
-/// so it is enough for a policy to pass the test
+/// so it is enough for one policy to pass the authorization requirement
 /// </summary>
 public class AnyPoliciesAuthorizationHandler : AuthorizationHandler<AnyPoliciesRequirement>
 {
@@ -15,11 +15,9 @@ public class AnyPoliciesAuthorizationHandler : AuthorizationHandler<AnyPoliciesR
     /// Initialize a new instance of the <see cref="AnyPoliciesAuthorizationHandler"/> class.
     /// </summary>
     /// <param name="serviceProvider">An instance of <see cref="IServiceProvider"/></param>
-    /// <remarks>
-    /// Not possible to inject <see cref="IAuthorizationService"/>, because it would be a circular reference
-    /// </remarks>
     public AnyPoliciesAuthorizationHandler(IServiceProvider serviceProvider)
     {
+        // Not possible to inject IAuthorizationService, because it would be a circular reference
         _serviceProvider = serviceProvider;
     }
 

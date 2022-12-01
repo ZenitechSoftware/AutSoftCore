@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace AutSoft.Common.AnyPolicies;
+namespace AutSoft.AspNetCore.Auth.AnyPolicies;
 
 /// <summary>
 /// Dynamically generate policies based on <see cref="AnyPoliciesAuthorizeAttribute"/>,

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace AutSoft.Common.AnyPolicies;
+namespace AutSoft.AspNetCore.Auth.AnyPolicies;
 
 /// <summary>
 /// Requirement of wanted to combine OR authorizations
