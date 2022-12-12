@@ -12,7 +12,7 @@ public partial class WhereExtensionsTests
         public void Should_AppendTrueExpression()
         {
             // Arrange
-            var subject = Enumerable.Range(1, 10).AsQueryable();
+            var subject = System.Linq.Enumerable.Range(1, 10).AsQueryable();
 
             // Act
             var result = subject.If(true, q => q.Where(i => i % 2 == 0)).ToList();
@@ -26,7 +26,7 @@ public partial class WhereExtensionsTests
         public void Should_NotAppendTruePredicate()
         {
             // Arrange
-            var subject = Enumerable.Range(1, 10).AsQueryable();
+            var subject = System.Linq.Enumerable.Range(1, 10).AsQueryable();
 
             // Act
             var result = subject.If(false, q => q.Where(i => i % 2 == 0)).ToList();
