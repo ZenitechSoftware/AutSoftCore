@@ -42,7 +42,7 @@ public static class WhereExtensions
     /// </summary>
     /// <typeparam name="TSource">Element's type</typeparam>
     /// <param name="source">An <see cref="IQueryable{T}" /> to extend</param>
-    /// <param name="condition">Condition to determine which expression to use in Where clause</param>
+    /// <param name="condition">Condition to determine transform the source or not</param>
     /// <param name="transform">Function which describes the modifications on the <paramref name="source"/>.</param>
     /// <returns>An extended <see cref="IQueryable{T}"/></returns>
     public static IQueryable<TSource> If<TSource>(
