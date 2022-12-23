@@ -1,4 +1,5 @@
 using AutSoft.AspNetCore.Auth;
+using AutSoft.AspNetCore.Blazor;
 using AutSoft.Common;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ public static class ServiceCollectionExtensions
     /// <returns>Expanded service collection</returns>
     public static IServiceCollection AddAutSoftAll(this IServiceCollection services)
     {
+        services.AddAutSoftAspNetCoreBlazor();
         services.AddAutSoftAspNetCoreAuth();
         services.AddAutSoftCommon();
 

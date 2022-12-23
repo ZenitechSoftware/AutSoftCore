@@ -1,0 +1,9 @@
+<div class="loading-button-content-root">
+	<div class="loading-progress-circle-inline @(LoadingOperation?.State == LoadingStateType.Loading ? "loading" : string.Empty)">
+        <MudProgressCircular Class="loading-progress-circle-inline" Size="Size.Small" Color="Color.Primary" Indeterminate="true" />
+    </div>
+
+    <div class="loading-content-inline">
+        @ChildContent
+    </div>
+</div>

@@ -1,0 +1,75 @@
+@inherits MudComponentBase
+
+<div class="@Classname" style="@Stylename">
+	@if (RenderContentWhileLoading)
+	{
+		<div class="@ContainerClassname">
+			@ChildContent
+		</div>
+	}
+	else if (LoadingOperation?.IsContentVisible ?? false)
+	{
+		@ChildContent
+	}
+
+    @if (LoadingOperation?.State == LoadingStateType.Loading && LoadingOperation.IsBlocking)
+    {
+        <div class="loading-progress-circle">
+            <MudProgressCircular Size="Size.Large" Color="Color.Primary" Indeterminate="true" />
+        </div>
+    }
+
+    @if (LoadingOperation?.State == LoadingStateType.Failed)
+    {
+        <MudCard Class="error-card">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Align="Align.Center" Typo="Typo.h5">@LoadingOperation.Error?.Title</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <div class="d-flex gap-4">
+                    <div class="align-self-center">
+                        <div class="error-icon" />
+                    </div>
+                    <div class="flex-grow-1 align-self-start">
+                        <MudText Typo="Typo.body1">@LoadingOperation.Error?.Details</MudText>
+
+                        @if (!string.IsNullOrEmpty(LoadingOperation.Error?.DisplayValidationErrors))
+                        {
+                            <MudText Typo="Typo.body1">@LoadingOperation.Error.DisplayValidationErrors</MudText>
+                        }
+                    </div>
+                </div>
+
+                @if (LoadingOperation.IsBlocking)
+                {
+                    <div class="center-content my-2">
+                        <MudButton StartIcon="@Icons.Material.Filled.Replay" Variant="Variant.Filled" OnClick="@OnRetry" Color="Color.Primary">Retry</MudButton>
+                    </div>
+                }
+
+                <MudIconButton OnClick="LoadingOperation.CopyDetailsAsync" Class="d-block mx-auto my-2" Variant="Variant.Text" Icon="@Icons.Material.Outlined.ContentCopy" Title="Copy details" />
+
+                @if (!string.IsNullOrEmpty(LoadingOperation.Error?.TechnicalDetails) || !string.IsNullOrEmpty(LoadingOperation.Error?.CorrelationId))
+                {
+                    <MudExpansionPanel>
+                        <TitleContent>
+                            <div class="d-flex pa-2">
+                                <MudIcon Class="mr-3" Icon="@Icons.Material.Filled.Info" />
+                                <MudText Typo="Typo.body1">Technical details</MudText>
+                            </div>
+                        </TitleContent>
+
+                        <ChildContent>
+                            <MudText Typo="Typo.caption">@LoadingOperation.Error.CorrelationId</MudText>
+                            <br>
+                            <MudText Class="error-technical-details" Typo="Typo.caption">@LoadingOperation.Error.TechnicalDetails</MudText>
+                        </ChildContent>
+                    </MudExpansionPanel>
+                }
+            </MudCardContent>
+        </MudCard>
+    }
+</div>
