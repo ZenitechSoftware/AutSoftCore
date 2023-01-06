@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Components;
 
 namespace AutSoft.AspNetCore.Blazor.DataField;
+
+/// <summary>
+/// Data field
+/// </summary>
 public partial class DataField
 {
     /// <summary>

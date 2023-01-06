@@ -104,3 +104,14 @@
     height: 70px;
     width: 70px;
 }
+
+/* DataField */
+.datafield-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.datafield-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
