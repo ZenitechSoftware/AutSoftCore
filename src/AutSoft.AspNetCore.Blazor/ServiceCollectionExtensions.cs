@@ -29,6 +29,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<DefaultLoadingErrorHandlerFactory>();
         services.AddTransient<LoadingOperation>();
         services.AddTransient<BlockingLoadingOperation>();
+        services.AddSingleton<BlazorComponentLocalizer>();
 
         return services;
     }

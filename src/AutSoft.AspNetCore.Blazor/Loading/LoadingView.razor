@@ -1,4 +1,5 @@
 @inherits MudComponentBase
+@inject Blazor.Localization.BlazorComponentLocalizer Localizer
 
 <div class="@Classname" style="@Stylename">
 	@if (RenderContentWhileLoading)
@@ -58,7 +59,7 @@
                         <TitleContent>
                             <div class="d-flex pa-2">
                                 <MudIcon Class="mr-3" Icon="@Icons.Material.Filled.Info" />
-                                <MudText Typo="Typo.body1">Technical details</MudText>
+                                <MudText Typo="Typo.body1">@Localizer.LoadingViewTechnicalDetailsLabel</MudText>
                             </div>
                         </TitleContent>
 

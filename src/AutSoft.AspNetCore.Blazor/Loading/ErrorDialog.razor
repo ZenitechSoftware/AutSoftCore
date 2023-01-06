@@ -1,5 +1,6 @@
 @using AutSoft.AspNetCore.Blazor.ErrorHandling
 @inherits Dialog.DialogComponentBase<ErrorDialogParameter>
+@inject Blazor.Localization.BlazorComponentLocalizer Localizer
 
 <div class="error-dialog-root">
     <MudDialog DisableSidePadding="true">
@@ -32,7 +33,7 @@
                         <TitleContent>
                             <div class="d-flex pa-2">
                                 <MudIcon Class="mr-3" Icon="@Icons.Material.Filled.Info" />
-                                <MudText Typo="Typo.body1">Technical details</MudText>
+                                <MudText Typo="Typo.body1">@Localizer.ErrorDialogTechnicalDetailsLabel</MudText>
                             </div>
                         </TitleContent>
 
@@ -47,7 +48,7 @@
         </DialogContent>
 
         <DialogActions>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Cancel">Close</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Cancel">@Localizer.ErrorDialogCloseButtonLabel</MudButton>
         </DialogActions>
     </MudDialog>
 </div>
