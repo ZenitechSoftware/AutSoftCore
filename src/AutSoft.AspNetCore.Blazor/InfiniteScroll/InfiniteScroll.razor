@@ -1,4 +1,5 @@
 @typeparam TItem
+@using AutSoft.AspNetCore.Blazor.Loading
 
 <LoadingView LoadingOperation="@RootLoading">
     <Sve.Blazor.InfiniteScroll.Components.InfiniteScroll ObserverTargetId="@_observerTargetId" ObservableTargetReached="(e) => LoadMoreItemsAsync()">
