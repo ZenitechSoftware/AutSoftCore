@@ -1,5 +1,7 @@
 using AutSoft.AspNetCore.Blazor.ComponentState;
+using AutSoft.AspNetCore.Blazor.ErrorHandling;
 using AutSoft.AspNetCore.Blazor.Loading;
+using AutSoft.AspNetCore.Blazor.Localization;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +22,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddMudServices();
         services.AddSingleton<IComponentStateStorage, ComponentStateStorage>();
+        services.AddScoped<IDisplayErrorFactory, DisplayErrorFactory>();
         services.AddScoped<CustomActionLoadingErrorHandlerFactory>();
         services.AddScoped<DefaultLoadingErrorHandlerFactory>();
         services.AddTransient<LoadingOperation>();
