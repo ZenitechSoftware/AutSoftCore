@@ -1,3 +1,4 @@
+using AutSoft.AspNetCore.Blazor.Clipboard;
 using AutSoft.AspNetCore.Blazor.ComponentState;
 using AutSoft.AspNetCore.Blazor.ErrorHandling;
 using AutSoft.AspNetCore.Blazor.Loading;
@@ -21,6 +22,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddAutSoftAspNetCoreBlazor(this IServiceCollection services)
     {
         services.AddMudServices();
+        services.AddScoped<IClipboardService, ClipboardService>();
         services.AddSingleton<IComponentStateStorage, ComponentStateStorage>();
         services.AddScoped<IDisplayErrorFactory, DisplayErrorFactory>();
         services.AddScoped<CustomActionLoadingErrorHandlerFactory>();
