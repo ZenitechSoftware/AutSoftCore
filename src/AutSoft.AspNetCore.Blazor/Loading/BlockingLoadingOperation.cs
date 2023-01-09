@@ -22,7 +22,7 @@ public class BlockingLoadingOperation : LoadingOperation
     /// <param name="snackbar">Snakbar.</param>
     public BlockingLoadingOperation(ILogger<LoadingOperation> logger, IDisplayErrorFactory displayErrorFactory, DefaultLoadingErrorHandlerFactory defaultLoadingErrorHandlerFactory, IClipboardService clipboardService, ISnackbar snackbar) : base(logger, displayErrorFactory, defaultLoadingErrorHandlerFactory, clipboardService, snackbar)
     {
-        _isBlocking = true;
-        _state = LoadingStateType.Loading;
+        IsBlocking = true;
+        State = LoadingStateType.Loading;
     }
 }

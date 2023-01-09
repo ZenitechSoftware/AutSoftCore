@@ -12,16 +12,12 @@ public class DefaultLoadingErrorHandler : ILoadingErrorHandler
     /// <summary>
     /// Display error factory.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Base service")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Base service")]
-    protected readonly IDisplayErrorFactory _displayErrorFactory;
+    protected IDisplayErrorFactory DisplayErrorFactory { get; }
 
     /// <summary>
     /// Dialog service.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Base service")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Base service")]
-    protected readonly IDialogService _dialogService;
+    protected IDialogService DialogService { get; }
 
     /// <summary>
     /// Constructor of the DefaultLoadingErrorHandler.
@@ -30,8 +26,8 @@ public class DefaultLoadingErrorHandler : ILoadingErrorHandler
     /// <param name="dialogService">Dialog service.</param>
     public DefaultLoadingErrorHandler(IDisplayErrorFactory displayErrorFactory, IDialogService dialogService)
     {
-        _displayErrorFactory = displayErrorFactory;
-        _dialogService = dialogService;
+        DisplayErrorFactory = displayErrorFactory;
+        DialogService = dialogService;
     }
 
     /// <inheritdoc />
@@ -40,7 +36,7 @@ public class DefaultLoadingErrorHandler : ILoadingErrorHandler
         if (exception is TaskCanceledException)
             return Task.CompletedTask;
 
-        var displayError = _displayErrorFactory.CreateDisplayError(exception);
+        var displayError = DisplayErrorFactory.CreateDisplayError(exception);
 
         return HandleErrorCoreAsync(loadingOperation, displayError);
     }
@@ -51,11 +47,13 @@ public class DefaultLoadingErrorHandler : ILoadingErrorHandler
     protected virtual async Task HandleErrorCoreAsync(LoadingOperation loadingOperation, DisplayError error)
     {
         if (loadingOperation.IsBlocking)
+        {
             loadingOperation.Failed(error);
+        }
         else
         {
             loadingOperation.Done();
-            await _dialogService.ShowErrorDialogAsync(error, loadingOperation.CopyDetailsAsync);
+            await DialogService.ShowErrorDialogAsync(error, loadingOperation.CopyDetailsAsync);
         }
     }
 }

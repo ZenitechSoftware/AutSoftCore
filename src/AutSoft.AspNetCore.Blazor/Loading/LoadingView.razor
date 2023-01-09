@@ -2,16 +2,16 @@
 @inject Blazor.Localization.BlazorComponentLocalizer Localizer
 
 <div class="@Classname" style="@Stylename">
-	@if (RenderContentWhileLoading)
-	{
-		<div class="@ContainerClassname">
-			@ChildContent
-		</div>
-	}
-	else if (LoadingOperation?.IsContentVisible ?? false)
-	{
-		@ChildContent
-	}
+    @if (RenderContentWhileLoading)
+    {
+        <div class="@ContainerClassname">
+            @ChildContent
+        </div>
+    }
+    else if (LoadingOperation?.IsContentVisible ?? false)
+    {
+        @ChildContent
+    }
 
     @if (LoadingOperation?.State == LoadingStateType.Loading && LoadingOperation.IsBlocking)
     {

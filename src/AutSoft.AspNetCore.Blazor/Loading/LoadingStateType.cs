@@ -8,15 +8,15 @@ public enum LoadingStateType
     /// <summary>
     /// Currently loading.
     /// </summary>
-    Loading = 0,
+    Loading = 1,
 
     /// <summary>
     /// Loading is done, operation was successful.
     /// </summary>
-    Done = 1,
+    Done = 2,
 
     /// <summary>
     /// Loading is done, operation failed.
     /// </summary>
-    Failed = 2,
+    Failed = 3,
 }

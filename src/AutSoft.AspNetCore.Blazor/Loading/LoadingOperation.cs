@@ -24,16 +24,12 @@ public class LoadingOperation
     /// <summary>
     /// Loading operation state.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Base service")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Base service")]
-    protected LoadingStateType _state = LoadingStateType.Done;
+    private LoadingStateType _state = LoadingStateType.Done;
 
     /// <summary>
     /// Loading operation blocking state.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Base service")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Base service")]
-    protected bool _isBlocking;
+    private bool _isBlocking;
 
     /// <summary>
     /// Constructor of the LoadingOperation.
@@ -44,11 +40,11 @@ public class LoadingOperation
     /// <param name="clipboardService">Clipboard service.</param>
     /// <param name="snackbar"></param>
     public LoadingOperation(
-    ILogger<LoadingOperation> logger,
-    IDisplayErrorFactory displayErrorFactory,
-    DefaultLoadingErrorHandlerFactory defaultLoadingErrorHandlerFactory,
-    IClipboardService clipboardService,
-    ISnackbar snackbar
+        ILogger<LoadingOperation> logger,
+        IDisplayErrorFactory displayErrorFactory,
+        DefaultLoadingErrorHandlerFactory defaultLoadingErrorHandlerFactory,
+        IClipboardService clipboardService,
+        ISnackbar snackbar
 )
     {
         _logger = logger;
