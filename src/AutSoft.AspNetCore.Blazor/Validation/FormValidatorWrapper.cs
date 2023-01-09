@@ -1,4 +1,4 @@
-using AutSoft.Common.Validation;
+using AutSoft.Common.Object;
 
 using FluentValidation;
 using FluentValidation.Results;

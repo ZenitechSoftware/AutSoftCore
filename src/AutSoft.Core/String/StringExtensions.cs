@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace AutSoft.Common.Validation;
+namespace AutSoft.Common.String;
 
 /// <summary>
 /// Extension methods for string.

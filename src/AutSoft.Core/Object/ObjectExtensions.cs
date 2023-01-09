@@ -1,7 +1,9 @@
+using AutSoft.Common.String;
+
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
-namespace AutSoft.Common.Validation;
+namespace AutSoft.Common.Object;
 
 /// <summary>
 /// Extension methods for object.
