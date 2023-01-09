@@ -44,8 +44,7 @@ public class LoadingOperation
         IDisplayErrorFactory displayErrorFactory,
         DefaultLoadingErrorHandlerFactory defaultLoadingErrorHandlerFactory,
         IClipboardService clipboardService,
-        ISnackbar snackbar
-)
+        ISnackbar snackbar)
     {
         _logger = logger;
         _displayErrorFactory = displayErrorFactory;
