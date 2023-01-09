@@ -138,7 +138,7 @@ public partial class FilterRoot<T>
 
                 for (var i = 0; i < propertyValueAsList.Count; i++)
                 {
-                    if (!CompareValues(propertyValueAsList[i], defaultValueAsList[i]))
+                    if (!ValuesNotEqual(propertyValueAsList[i], defaultValueAsList[i]))
                         break;
 
                     equalItemsCount++;
@@ -147,7 +147,7 @@ public partial class FilterRoot<T>
                 if (equalItemsCount == propertyValueAsList.Count)
                     result++;
             }
-            else if (CompareValues(propertyValue, defaultValue))
+            else if (ValuesNotEqual(propertyValue, defaultValue))
             {
                 result++;
             }
@@ -156,7 +156,7 @@ public partial class FilterRoot<T>
         return result;
     }
 
-    private bool CompareValues(object? value, object? defaultValue) => defaultValue != null && !defaultValue!.Equals(value) || defaultValue == null && value != null;
+    private bool ValuesNotEqual(object? value, object? defaultValue) => (defaultValue != null && !defaultValue.Equals(value)) || (defaultValue == null && value != null);
 
     /// <summary>
     /// Creates a model with default values.
