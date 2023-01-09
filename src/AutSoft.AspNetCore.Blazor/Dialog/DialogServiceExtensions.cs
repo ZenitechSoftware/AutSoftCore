@@ -21,12 +21,12 @@ public static class DialogServiceExtensions
     /// <typeparam name="TDialog">Dialog type to show.</typeparam>
     /// <typeparam name="TParameter">Parameter type.</typeparam>
     public static Task ShowDialogAsync<TDialog, TParameter>(this IDialogService dialogService, TParameter parameter, DialogOptions? dialogOptions = null)
-        where TDialog : DialogComponentBase<TParameter> =>
+        where TDialog : DialogComponentBaseTParameter<TParameter> =>
         dialogService.Show<TDialog>(
             string.Empty,
             new DialogParameters
             {
-                [nameof(DialogComponentBase<TParameter>.Parameter)] = parameter,
+                [nameof(DialogComponentBaseTParameter<TParameter>.Parameter)] = parameter,
             },
             dialogOptions).Result;
 
@@ -37,13 +37,13 @@ public static class DialogServiceExtensions
     /// <typeparam name="TParameter">Parameter type.</typeparam>
     /// <typeparam name="TResult">Result type.</typeparam>
     public static async Task<TResult> ShowDialogResultAsync<TDialog, TParameter, TResult>(this IDialogService dialogService, TParameter parameter, DialogOptions? dialogOptions = null)
-        where TDialog : DialogComponentBase<TParameter, TResult>
+        where TDialog : DialogComponentBaseTParameterTResult<TParameter, TResult>
     {
         var result = await dialogService.Show<TDialog>(
             string.Empty,
             new DialogParameters
             {
-                [nameof(DialogComponentBase<TParameter>.Parameter)] = parameter,
+                [nameof(DialogComponentBaseTParameter<TParameter>.Parameter)] = parameter,
             },
             dialogOptions).Result;
 
@@ -56,7 +56,7 @@ public static class DialogServiceExtensions
     /// <typeparam name="TDialog">Dialog type to show.</typeparam>
     /// <typeparam name="TResult">Result type</typeparam>
     public static async Task<TResult> ShowDialogResultAsync<TDialog, TResult>(this IDialogService dialogService, DialogOptions? dialogOptions = null)
-        where TDialog : DialogComponentBaseResult<TResult>
+        where TDialog : DialogComponentBaseTResult<TResult>
     {
         var result = await dialogService.Show<TDialog>(string.Empty, dialogOptions).Result;
         return (TResult)result.Data;

@@ -1,11 +1,10 @@
 namespace AutSoft.AspNetCore.Blazor.Dialog;
 
 /// <summary>
-/// Base class for dialog components with parameter and return value.
+/// Base class for dialog components with return value.
 /// </summary>
-/// <typeparam name="TParameter">Parameter type.</typeparam>
 /// <typeparam name="TResult">Return value type.</typeparam>
-public abstract class DialogComponentBaseTParameterTResult<TParameter, TResult> : DialogComponentBaseTParameter<TParameter>
+public class DialogComponentBaseTResult<TResult> : DialogComponentBase
 {
     /// <summary>
     /// Close dialog.

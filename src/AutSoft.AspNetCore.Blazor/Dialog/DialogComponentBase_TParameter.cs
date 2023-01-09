@@ -2,8 +2,11 @@ using Microsoft.AspNetCore.Components;
 
 namespace AutSoft.AspNetCore.Blazor.Dialog;
 
-/// <inheritdoc />
-public abstract class DialogComponentBase<TParameter> : DialogComponentBase
+/// <summary>
+/// Base class for dialog components with parameter.
+/// </summary>
+/// <typeparam name="TParameter">Parameter type.</typeparam>
+public abstract class DialogComponentBaseTParameter<TParameter> : DialogComponentBase
 {
     /// <summary>
     /// Parameter of the dialog.
