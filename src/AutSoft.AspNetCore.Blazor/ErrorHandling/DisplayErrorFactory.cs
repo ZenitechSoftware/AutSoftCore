@@ -6,7 +6,7 @@ namespace AutSoft.AspNetCore.Blazor.ErrorHandling;
 public class DisplayErrorFactory : IDisplayErrorFactory
 {
     /// <inheritdoc />
-    public DisplayError CreateDisplayError(Exception exception)
+    public virtual DisplayError CreateDisplayError(Exception exception)
     {
         return new DisplayError(
             title: "Error",
