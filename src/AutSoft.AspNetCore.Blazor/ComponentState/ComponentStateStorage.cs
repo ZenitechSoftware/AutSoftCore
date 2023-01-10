@@ -18,27 +18,19 @@ public class ComponentStateStorage : IComponentStateStorage
 
         var propertiesToSave = GetPropertiesFromHierarchy(componentType, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
             .Where(prop => prop.IsDefined(typeof(PreserveStateAttribute), false))
+            .Where(prop => prop.GetValue(component) != null)
+            .Select(prop => new StateEntry(prop, prop.GetValue(component)!))
             .ToList();
 
-        foreach (var property in propertiesToSave)
-        {
-            var value = property.GetValue(component);
-
-            if (value != null)
-                componentStates.Add(new StateEntry(property, value));
-        }
+        componentStates.AddRange(propertiesToSave);
 
         var fieldsToSave = GetFieldsFromHierarchy(componentType, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-            .Where(prop => prop.IsDefined(typeof(PreserveStateAttribute), false))
+            .Where(field => field.IsDefined(typeof(PreserveStateAttribute), false))
+            .Where(field => field.GetValue(component) != null)
+            .Select(field => new StateEntry(field, field.GetValue(component)!))
             .ToList();
 
-        foreach (var field in fieldsToSave)
-        {
-            var value = field.GetValue(component);
-
-            if (value != null)
-                componentStates.Add(new StateEntry(field, value));
-        }
+        componentStates.AddRange(fieldsToSave);
 
         _currentComponentStates[instanceKey] = componentStates;
     }
@@ -47,12 +39,16 @@ public class ComponentStateStorage : IComponentStateStorage
     public void RestoreStateForComponent(string instanceKey, ComponentBase component)
     {
         if (!_currentComponentStates.ContainsKey(instanceKey))
+        {
             return;
+        }
 
         foreach (var state in _currentComponentStates[instanceKey])
         {
             if (state.Member is PropertyInfo pi)
+            {
                 pi.SetValue(component, state.Value);
+            }
             else if (state.Member is FieldInfo fi)
             {
                 fi.SetValue(component, state.Value);
@@ -73,24 +69,36 @@ public class ComponentStateStorage : IComponentStateStorage
     private IEnumerable<PropertyInfo> GetPropertiesFromHierarchy(Type type, BindingFlags bindingFlags)
     {
         foreach (var property in type.GetProperties(bindingFlags))
+        {
             yield return property;
+        }
 
         if (type.BaseType == null)
+        {
             yield break;
+        }
 
         foreach (var property in GetPropertiesFromHierarchy(type.BaseType, bindingFlags))
+        {
             yield return property;
+        }
     }
 
     private IEnumerable<FieldInfo> GetFieldsFromHierarchy(Type type, BindingFlags bindingFlags)
     {
         foreach (var field in type.GetFields(bindingFlags))
+        {
             yield return field;
+        }
 
         if (type.BaseType == null)
+        {
             yield break;
+        }
 
         foreach (var field in GetFieldsFromHierarchy(type.BaseType, bindingFlags))
+        {
             yield return field;
+        }
     }
 }

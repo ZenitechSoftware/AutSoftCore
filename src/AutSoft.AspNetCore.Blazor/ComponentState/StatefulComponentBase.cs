@@ -9,15 +9,17 @@ namespace AutSoft.AspNetCore.Blazor.ComponentState;
 public class StatefulComponentBase : ComponentBase, IDisposable
 {
     private string? _instanceKey;
-    private bool _disposed;
+    private bool _isDisposed;
 
     /// <summary>
     /// Indicates that the component state should be saved.
     /// </summary>
     protected virtual bool ShouldSaveState { get; } = true;
 
+    [Inject]
     private IComponentStateStorage ComponentStateStorage { get; set; } = null!;
 
+    [Inject]
     private IJSRuntime JSRuntime { get; set; } = null!;
 
     /// <inheritdoc />
@@ -42,12 +44,16 @@ public class StatefulComponentBase : ComponentBase, IDisposable
     /// <inheritdoc />
     protected virtual void Dispose(bool disposing)
     {
-        if (_disposed)
+        if (_isDisposed)
+        {
             return;
+        }
 
         if (disposing && !string.IsNullOrEmpty(_instanceKey))
+        {
             ComponentStateStorage.SaveStateForComponent(_instanceKey, this);
+        }
 
-        _disposed = true;
+        _isDisposed = true;
     }
 }

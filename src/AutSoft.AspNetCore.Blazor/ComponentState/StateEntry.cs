@@ -3,7 +3,7 @@ using System.Reflection;
 namespace AutSoft.AspNetCore.Blazor.ComponentState;
 
 /// <summary>
-/// State of the entry.
+/// State entry for the component.
 /// </summary>
 public class StateEntry
 {

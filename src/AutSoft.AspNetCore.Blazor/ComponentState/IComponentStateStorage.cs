@@ -8,21 +8,21 @@ namespace AutSoft.AspNetCore.Blazor.ComponentState;
 public interface IComponentStateStorage
 {
     /// <summary>
-    /// Saves the component state.
+    /// Saves the state of the component to the specified instance key.
     /// </summary>
-    /// <param name="instanceKey">Key of the instance.</param>
+    /// <param name="instanceKey">Key of the instance where to save.</param>
     /// <param name="component">Component to save.</param>
     void SaveStateForComponent(string instanceKey, ComponentBase component);
 
     /// <summary>
-    /// Restores the component state.
+    /// Restores the state of the component from the specified instance key.
     /// </summary>
-    /// <param name="instanceKey">Key of the instance.</param>
+    /// <param name="instanceKey">Key of the instance from which to reload.</param>
     /// <param name="component">Component to restore.</param>
     void RestoreStateForComponent(string instanceKey, ComponentBase component);
 
     /// <summary>
-    /// Clears the component state.
+    /// Clear all component states.
     /// </summary>
     void ClearComponentStates();
 }
