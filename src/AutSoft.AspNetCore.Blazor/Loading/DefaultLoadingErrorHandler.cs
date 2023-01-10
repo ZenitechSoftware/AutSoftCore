@@ -1,3 +1,4 @@
+using AutSoft.AspNetCore.Blazor.Dialog.Error;
 using AutSoft.AspNetCore.Blazor.ErrorHandling;
 
 using MudBlazor;

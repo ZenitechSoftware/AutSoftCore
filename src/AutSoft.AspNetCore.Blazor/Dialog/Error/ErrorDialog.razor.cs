@@ -1,5 +1,8 @@
-namespace AutSoft.AspNetCore.Blazor.Loading;
+namespace AutSoft.AspNetCore.Blazor.Dialog.Error;
 
+/// <summary>
+/// Error dialog.
+/// </summary>
 public partial class ErrorDialog
 {
     /// <summary>

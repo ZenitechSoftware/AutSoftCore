@@ -3,12 +3,12 @@ using AutSoft.AspNetCore.Blazor.ErrorHandling;
 
 using MudBlazor;
 
-namespace AutSoft.AspNetCore.Blazor.Loading;
+namespace AutSoft.AspNetCore.Blazor.Dialog.Error;
 
 /// <summary>
 /// Error dialog extension methods for <see cref="IDialogService">IDialogService</see>.
 /// </summary>
-public static class DialogServiceExtensions
+public static class ErrorDialogExtensions
 {
     /// <summary>
     /// Show error dialog.

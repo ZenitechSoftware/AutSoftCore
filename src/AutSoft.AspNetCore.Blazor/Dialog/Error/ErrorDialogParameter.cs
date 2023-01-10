@@ -1,6 +1,6 @@
 using AutSoft.AspNetCore.Blazor.ErrorHandling;
 
-namespace AutSoft.AspNetCore.Blazor.Loading;
+namespace AutSoft.AspNetCore.Blazor.Dialog.Error;
 
 /// <summary>
 /// Parameter of error dialog.
