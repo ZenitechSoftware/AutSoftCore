@@ -64,7 +64,7 @@ public class AutoCompleteDataSource<TKey, TItem>
     /// </summary>
     /// <param name="key">Key of the item.</param>
     /// <returns>Name of the item.</returns>
-    public string? ItemToText(TKey? key)
+    public string? GetItemName(TKey? key)
     {
         if (EqualityComparer<TKey>.Default.Equals(key, default))
             return null;
