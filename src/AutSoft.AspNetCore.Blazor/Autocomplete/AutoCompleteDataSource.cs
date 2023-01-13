@@ -37,26 +37,29 @@ public class AutoCompleteDataSource<TKey, TItem>
     }
 
     /// <summary>
-    /// Sets the currently selected item.
+    /// Gets or sets the currently selected item.
     /// </summary>
-    /// <param name="item">Selected item.</param>
-    public void SetCurrentItem(TItem? item)
+    /// <param name="i">Index,</param>
+    /// <returns>Item type.</returns>
+    public TItem? this[TKey? key]
     {
-        if (EqualityComparer<TItem>.Default.Equals(item, default))
+        private get
         {
-            _currentItems = new List<TItem>();
-            return;
+            if (_currentItems == null)
+                return default;
+
+            return _currentItems.SingleOrDefault(i => EqualityComparer<TKey>.Default.Equals(key, _keySelector(i)));
         }
+        set
+        {
+            if (EqualityComparer<TItem>.Default.Equals(value, default))
+            {
+                _currentItems = new List<TItem>();
+                return;
+            }
 
-        _currentItems = new List<TItem> { item! };
-    }
-
-    private TItem? GetSelectedItem(TKey? key)
-    {
-        if (_currentItems == null)
-            return default;
-
-        return _currentItems.SingleOrDefault(i => EqualityComparer<TKey>.Default.Equals(key, _keySelector(i)));
+            _currentItems = new List<TItem> { value! };
+        }
     }
 
     /// <summary>
@@ -69,7 +72,7 @@ public class AutoCompleteDataSource<TKey, TItem>
         if (EqualityComparer<TKey>.Default.Equals(key, default))
             return null;
 
-        var selectedItem = GetSelectedItem(key);
+        var selectedItem = this[key];
 
         return !EqualityComparer<TItem>.Default.Equals(selectedItem, default) ? _nameSelector(selectedItem!) : null;
     }
