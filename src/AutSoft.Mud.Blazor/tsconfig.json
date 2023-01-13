@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "wwwroot/app/AutSoft.Mud.Blazor.js"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ],
+  "include": [
+    "**/*"
+  ]
+}

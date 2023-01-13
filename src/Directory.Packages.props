@@ -12,6 +12,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.8" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.TypeScript.MSBuild" Version="4.9.4" />
     <PackageVersion Include="Stateless" Version="5.12.0" />
     <PackageVersion Include="Sve.Blazor.InfiniteScroll" Version="1.0.0-alpha" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.12" />
