@@ -12,13 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Sve.Blazor.InfiniteScroll" />
     <PackageReference Include="FluentValidation" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+    <PackageReference Include="MudBlazor" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutSoft.Core\AutSoft.Common.csproj" />
-    <ProjectReference Include="..\AutSoft.Linq\AutSoft.Linq.csproj" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutSoft.AspNetCore.Blazor\AutSoft.AspNetCore.Blazor.csproj" />
   </ItemGroup>
 
 </Project>

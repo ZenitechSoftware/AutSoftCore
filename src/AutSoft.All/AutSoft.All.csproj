@@ -11,6 +11,7 @@
     <ProjectReference Include="..\AutSoft.AspNetCore.Blazor\AutSoft.AspNetCore.Blazor.csproj" />
     <ProjectReference Include="..\AutSoft.DbScaffolding.Identity\AutSoft.DbScaffolding.Identity.csproj" />
     <ProjectReference Include="..\AutSoft.Linq\AutSoft.Linq.csproj" />
+    <ProjectReference Include="..\AutSoft.Mud.Blazor\AutSoft.Mud.Blazor.csproj" />
   </ItemGroup>
 
 </Project>

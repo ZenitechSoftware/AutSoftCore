@@ -1,5 +1,3 @@
-using AutSoft.Common.Exceptions;
-
 namespace AutSoft.AspNetCore.Blazor.ErrorHandling;
 
 /// <inheritdoc />
