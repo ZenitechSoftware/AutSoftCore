@@ -41,12 +41,8 @@ function init_nav() {
 
 init_nav();
 
-window.addEventListener('nav::tick', function (e) {
-
-})
-
 function nav_dispatch(e = null) {
-  window.dispatchEvent(new CustomEvent('nav::tick', {
+  window.dispatchEvent(new CustomEvent('nav::state_changed', {
     detail: {
       nav_prev_position: nav_prev_position,
       nav_position: nav_position,
