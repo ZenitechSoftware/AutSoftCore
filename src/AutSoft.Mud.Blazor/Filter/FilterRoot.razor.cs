@@ -87,7 +87,8 @@ public partial class FilterRoot<T>
     {
         await Task.Delay(200);
         await UpdateHasFilterAsync();
-        FilterAsync();
+        // This call is not awaited because of performance causes
+        _ = FilterAsync();
     }
 
     /// <summary>
@@ -172,6 +173,7 @@ public partial class FilterRoot<T>
         Model = await CreateDefaultModelAsync();
         await UpdateHasFilterAsync();
         await ModelChanged.InvokeAsync(Model);
-        FilterAsync();
+        // This call is not awaited because of performance causes
+        _ = FilterAsync();
     }
 }
