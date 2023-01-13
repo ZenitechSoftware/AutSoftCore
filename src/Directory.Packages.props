@@ -1,19 +1,21 @@
 <Project>
-
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageVersion Include="AutoMapper" Version="11.0.1" />
     <PackageVersion Include="EntityFrameworkCore.Scaffolding.Handlebars" Version="6.0.3" />
+    <PackageVersion Include="FluentValidation" Version="11.4.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="6.0.8" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.8" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.TypeScript.MSBuild" Version="4.9.4" />
     <PackageVersion Include="Stateless" Version="5.12.0" />
+    <PackageVersion Include="Sve.Blazor.InfiniteScroll" Version="1.0.0-alpha" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.12" />
+    <PackageVersion Include="MudBlazor" Version="6.1.6" />
   </ItemGroup>
-
 </Project>

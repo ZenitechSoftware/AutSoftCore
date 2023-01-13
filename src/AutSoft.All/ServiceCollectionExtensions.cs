@@ -1,5 +1,7 @@
 using AutSoft.AspNetCore.Auth;
+using AutSoft.AspNetCore.Blazor;
 using AutSoft.Common;
+using AutSoft.Mud.Blazor;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +20,8 @@ public static class ServiceCollectionExtensions
     {
         services.AddAutSoftAspNetCoreAuth();
         services.AddAutSoftCommon();
+        services.AddAutSoftAspNetCoreBlazor();
+        services.AddAutSoftMudBlazor();
 
         return services;
     }

@@ -1,0 +1,15 @@
+@inherits DialogComponentBaseTParameterTResult<ConfirmDialogParameters, bool>
+@inject BlazorComponentLocalizer Localizer
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h5">@Parameter!.Title</MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudText Typo="Typo.body1">@Parameter!.Description</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Text" OnClick="@((e) => Close(false))">@Localizer.ConfirmDialogCloseButtonLabel</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@((e) => Close(true))">@Localizer.ConfirmDialogYesButtonLabel</MudButton>
+    </DialogActions>
+</MudDialog>
