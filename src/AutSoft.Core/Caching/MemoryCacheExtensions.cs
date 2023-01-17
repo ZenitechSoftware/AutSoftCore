@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Primitives;
 
 namespace AutSoft.Common.Caching;
 
@@ -8,8 +7,6 @@ namespace AutSoft.Common.Caching;
 /// </summary>
 public static class MemoryCacheExtensions
 {
-    private const string Postfix = "CancellationTokenSource";
-
     /// <summary>
     /// Get or create a cached element with error handling
     /// </summary>
@@ -30,7 +27,6 @@ public static class MemoryCacheExtensions
             return await cache.GetOrCreateAsync(key, entry =>
             {
                 entry.SetOptions(options);
-                entry.AddExpirationToken(cache.CreateToken(key));
                 return factory(entry);
             });
         }
@@ -60,9 +56,8 @@ public static class MemoryCacheExtensions
         try
         {
             using var entry = cache.CreateEntry(key);
-            entry.Size = size;
             entry.SetOptions(options);
-            entry.AddExpirationToken(cache.CreateToken(key));
+            entry.Size = size;
             entry.Value = value;
         }
         catch
@@ -88,34 +83,11 @@ public static class MemoryCacheExtensions
         }
     }
 
-    private static IChangeToken CreateToken(this IMemoryCache cache, string key)
-    {
-        var tokenSourceKey = key + Postfix;
-
-        var source = cache.Set(
-            tokenSourceKey,
-            new CancellationTokenSource(),
-            new MemoryCacheEntryOptions { Size = 1 });
-
-        return new CancellationChangeToken(source.Token);
-    }
-
     /// <summary>
     /// Invalidate a cached element's value
     /// </summary>
     /// <param name="cache">An <see cref="IMemoryCache"/> object</param>
     /// <param name="key">The key of the cached element</param>
-    /// <returns>The element invalidated successfully or not</returns>
-    public static bool Invalidate(this IMemoryCache cache, string key)
-    {
-        var tokenSourceKey = key + Postfix;
-
-        if (!cache.TryGetValue(tokenSourceKey, out CancellationTokenSource source))
-            return false;
-
-        source.Cancel();
-        cache.Remove(tokenSourceKey);
-
-        return true;
-    }
+    public static void Invalidate(this IMemoryCache cache, string key)
+        => cache.Remove(key);
 }
