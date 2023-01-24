@@ -34,11 +34,8 @@ public partial class EnumerationDisplay<TEnum> : MudComponentBase where TEnum : 
     {
         await base.OnParametersSetAsync();
 
-        if (Type.Equals(default(TEnum)) && Id.HasValue && Id.Value != default)
-            _displayName = await EnumerationCache.ResolveDisplayNameAsync(Type, Id.Value);
-        else
-        {
-            _displayName = null;
-        }
+        _displayName = !Type.Equals(default(TEnum)) && Id.HasValue && Id.Value != default
+            ? await EnumerationCache.ResolveDisplayNameAsync(Type, Id.Value)
+            : null;
     }
 }

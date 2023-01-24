@@ -1,14 +1,14 @@
-namespace AutSoft.AspNetCore.Blazor.Enumeration;
+namespace AutSoft.Common.Enumeration;
 
 /// <summary>
 /// Enumeration item data.
 /// </summary>
-public class EnumerationItem
+public class EnumerationObjectItem
 {
     /// <summary>
     /// Default constructor of the EnumerationItem.
     /// </summary>
-    public EnumerationItem()
+    public EnumerationObjectItem()
     {
     }
 
@@ -17,7 +17,7 @@ public class EnumerationItem
     /// </summary>
     /// <param name="key">Key of the enum item.</param>
     /// <param name="value">Value of the enum item.</param>
-    public EnumerationItem(int key, string value)
+    public EnumerationObjectItem(int key, string value)
     {
         Id = key;
         DisplayName = value;

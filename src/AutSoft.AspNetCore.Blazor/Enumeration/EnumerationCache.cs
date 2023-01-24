@@ -1,4 +1,5 @@
 using AutSoft.Common.Concurrency;
+using AutSoft.Common.Enumeration;
 
 using Microsoft.Extensions.Logging;
 
@@ -7,7 +8,7 @@ namespace AutSoft.AspNetCore.Blazor.Enumeration;
 /// <inheritdoc />
 public class EnumerationCache<TEnum> : IEnumerationCache<TEnum>, IDisposable where TEnum : Enum
 {
-    private readonly Dictionary<TEnum, List<EnumerationItem>> _enumerations = new();
+    private readonly Dictionary<TEnum, List<EnumerationObjectItem>> _enumerations = new();
 
     private readonly AsyncLock _downloadLock = new();
 
@@ -68,12 +69,12 @@ public class EnumerationCache<TEnum> : IEnumerationCache<TEnum>, IDisposable whe
     }
 
     /// <inheritdoc />
-    public async Task<List<EnumerationItem>> ResolveEnumerationItemsAsync(TEnum type)
+    public async Task<List<EnumerationObjectItem>> ResolveEnumerationItemsAsync(TEnum type)
     {
         await TryEnsureHasCachedEnumerationAsync(type);
 
         if (!_enumerations.ContainsKey(type))
-            return new List<EnumerationItem>();
+            return new List<EnumerationObjectItem>();
 
         return _enumerations[type];
     }

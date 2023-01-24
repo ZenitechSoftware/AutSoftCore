@@ -1,3 +1,5 @@
+using AutSoft.Common.Enumeration;
+
 namespace AutSoft.AspNetCore.Blazor.Enumeration;
 
 /// <summary>
@@ -11,5 +13,5 @@ public interface IEnumerationService<TEnum> where TEnum : Enum
     /// </summary>
     /// <param name="enumerationTypes">Enumeration types.</param>
     /// <returns>Values of the enumeration types.</returns>
-    Task<List<Enumeration<TEnum>>> ListEnumerationsAsync(List<TEnum> enumerationTypes);
+    Task<List<EnumerationObject<TEnum>>> ListEnumerationsAsync(List<TEnum> enumerationTypes);
 }

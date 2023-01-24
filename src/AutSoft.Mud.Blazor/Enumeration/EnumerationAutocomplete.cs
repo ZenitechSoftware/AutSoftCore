@@ -1,4 +1,5 @@
 using AutSoft.AspNetCore.Blazor.Enumeration;
+using AutSoft.Common.Enumeration;
 
 using Microsoft.AspNetCore.Components;
 
@@ -28,7 +29,7 @@ public class EnumerationAutocomplete<T, TEnum> : MudAutocomplete<T> where TEnum 
     [Inject]
     private IEnumerationCache<TEnum> EnumerationCache { get; set; } = null!;
 
-    private List<EnumerationItem> _enumerationItems = new();
+    private List<EnumerationObjectItem> _enumerationItems = new();
 
     /// <summary>
     /// Default constructor of the EnumerationAutocomplete.

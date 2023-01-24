@@ -1,26 +1,26 @@
-namespace AutSoft.AspNetCore.Blazor.Enumeration;
+namespace AutSoft.Common.Enumeration;
 
 /// <summary>
 /// Enumeration type items.
 /// </summary>
 /// <typeparam name="TEnum">Collection of the enumeration types.</typeparam>
-public class Enumeration<TEnum> where TEnum : Enum
+public class EnumerationObject<TEnum> where TEnum : Enum
 {
     /// <summary>
     /// Default constructor of the Enumeration.
     /// </summary>
-    public Enumeration()
+    public EnumerationObject()
     {
         Type = default!;
-        Items = new List<EnumerationItem>();
+        Items = new List<EnumerationObjectItem>();
     }
 
     /// <summary>
-    /// Default constructor of the Enumeration.
+    /// Constructor of the Enumeration.
     /// </summary>
     /// <param name="type">Enumeration type.</param>
     /// <param name="items">Items of the enumerations.</param>
-    public Enumeration(TEnum type, List<EnumerationItem> items)
+    public EnumerationObject(TEnum type, List<EnumerationObjectItem> items)
     {
         Type = type;
         Items = items;
@@ -34,5 +34,5 @@ public class Enumeration<TEnum> where TEnum : Enum
     /// <summary>
     /// Items of the enumeration.
     /// </summary>
-    public List<EnumerationItem> Items { get; set; }
+    public List<EnumerationObjectItem> Items { get; set; }
 }

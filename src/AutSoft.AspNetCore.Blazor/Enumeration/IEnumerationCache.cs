@@ -1,3 +1,9 @@
+using AutSoft.Common.Enumeration;
+
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace AutSoft.AspNetCore.Blazor.Enumeration;
 
 /// <summary>
@@ -19,7 +25,7 @@ public interface IEnumerationCache<TEnum> where TEnum : Enum
     /// </summary>
     /// <param name="type">Enumeration type.</param>
     /// <returns>Enumeration items.</returns>
-    Task<List<EnumerationItem>> ResolveEnumerationItemsAsync(TEnum type);
+    Task<List<EnumerationObjectItem>> ResolveEnumerationItemsAsync(TEnum type);
 
     /// <summary>
     /// Caches the specified enumeration types if they are not in the cache.
