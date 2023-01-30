@@ -20,6 +20,12 @@ steps:
     configFilePath: 'pipelines/GitVersion.yml'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    command: build
+    projects: '$(Build.Repository.LocalPath)/src/**/*.csproj'
+
+- task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
   inputs:
     command: pack
