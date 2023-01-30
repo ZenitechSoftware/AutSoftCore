@@ -31,7 +31,8 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
-      
+    
+    # Reason for this build: https://github.com/microsoft/TypeScript/issues/42907
     - name: Build
       run: dotnet build --no-restore --configuration Release
 
