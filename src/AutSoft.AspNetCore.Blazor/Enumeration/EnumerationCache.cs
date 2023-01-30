@@ -58,14 +58,14 @@ public class EnumerationCache<TEnum> : IEnumerationCache<TEnum>, IDisposable whe
     }
 
     /// <inheritdoc />
-    public async Task<string?> ResolveDisplayNameAsync(TEnum type, int key)
+    public async Task<string?> ResolveDisplayNameAsync(TEnum type, int id)
     {
         await TryEnsureHasCachedEnumerationAsync(type);
 
         if (!_enumerations.ContainsKey(type))
             return null;
 
-        return _enumerations[type].SingleOrDefault(i => i.Id == key)?.DisplayName;
+        return _enumerations[type].SingleOrDefault(i => i.Id == id)?.DisplayName;
     }
 
     /// <inheritdoc />

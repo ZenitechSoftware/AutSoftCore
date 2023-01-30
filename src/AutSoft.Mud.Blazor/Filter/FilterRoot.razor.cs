@@ -63,6 +63,7 @@ public partial class FilterRoot<T>
     /// <summary>
     /// Filter form.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "BL0005:Component parameter should not be set outside of its component.", Justification = "Filter field change")]
     public MudForm? Form
     {
         get => _form;
@@ -70,8 +71,10 @@ public partial class FilterRoot<T>
         {
             _form = value;
 
-            if (value != null)
+            if (_form != null)
+            {
                 _form.FieldChanged = new EventCallback<FormFieldChangedEventArgs>(this, OnFieldChangedAsync);
+            }
         }
     }
 
