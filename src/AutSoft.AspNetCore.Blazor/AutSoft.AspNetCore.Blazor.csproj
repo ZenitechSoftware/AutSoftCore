@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -26,7 +26,7 @@
 
   <Target Name="RemoveTSConfigFileFromPackage" AfterTargets="CompileTypeScriptWithTSConfig">
     <ItemGroup>
-        <Content Remove="**\tsconfig.json" />
+      <Content Remove="tsconfig.json" />
     </ItemGroup>
   </Target>
 </Project>
