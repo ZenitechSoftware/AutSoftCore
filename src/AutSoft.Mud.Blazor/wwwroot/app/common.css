@@ -1,0 +1,117 @@
+/* ErrorDialog.razor */
+.error-dialog-root .mud-expand-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-dialog-root .mud-expand-panel .mud-expand-panel-header {
+    padding: 0;
+    min-height: 0;
+    align-self: center;
+    width: auto;
+}
+
+.error-dialog-root .mud-expand-panel .mud-expand-panel-content {
+    padding: 0;
+}
+
+.error-dialog-root .mud-expand-panel .error-technical-details {
+    word-break: break-word;
+}
+
+.error-dialog-root .mud-expand-panel .error-dialog-content {
+    max-height: 500px;
+    overflow-y: scroll
+}
+
+.error-dialog-root .error-icon.mud-icon-root {
+    height: 70px;
+    width: 70px;
+}
+
+/* LoadingButtonContent */
+.loading-button-content-root .loading-progress-circle-inline {
+    vertical-align: middle;
+    text-align: initial;
+    display: inline-block;
+    opacity: 0;
+}
+
+.loading-button-content-root .loading-progress-circle-inline.loading {
+    opacity: 1;
+}
+
+.loading-button-content-root .loading-progress-circle-inline .mud-progress-circular {
+    vertical-align: middle;
+}
+
+.loading-button-content-root .loading-progress-circle-inline circle {
+    stroke: #FFFFFF;
+}
+
+.loading-button-content-root .loading-content-inline {
+    vertical-align: middle;
+    text-align: initial;
+    margin: 0 35px 0 8px;
+    display: inline-block;
+}
+
+/* LoadingView */
+.loading-view-root {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-view-root .error-card {
+    margin: 0 auto auto auto;
+    max-width: 800px;
+    word-break: break-all;
+}
+
+.loading-view-root .loading-progress-circle {
+    padding: 32px;
+    align-self: center;
+    margin: 0 auto auto auto;
+}
+
+.loading-view-root .error-card .mud-expand-panel .mud-expand-panel-header {
+    padding: 0;
+}
+
+.loading-view-root .error-card .mud-expand-panel .mud-expand-panel-content {
+    padding: 0;
+}
+
+.loading-view-root .error-card .mud-expand-panel .mud-expand-panel-header {
+    min-height: 0;
+}
+
+.loading-view-root .error-card .mud-expand-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-view-root .error-card .mud-expand-panel .mud-expand-panel-header {
+    align-self: center;
+    width: auto;
+}
+
+.loading-view-root .error-technical-details {
+    word-break: break-word;
+}
+
+.loading-view-root .error-icon.mud-icon-root {
+    height: 70px;
+    width: 70px;
+}
+
+/* DataField */
+.datafield-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.datafield-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

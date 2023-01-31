@@ -1,5 +1,4 @@
 using AutSoft.AspNetCore.Auth;
-using AutSoft.AspNetCore.Blazor;
 using AutSoft.Common;
 using AutSoft.Mud.Blazor;
 
@@ -20,7 +19,6 @@ public static class ServiceCollectionExtensions
     {
         services.AddAutSoftAspNetCoreAuth();
         services.AddAutSoftCommon();
-        services.AddAutSoftAspNetCoreBlazor();
         services.AddAutSoftMudBlazor();
 
         return services;

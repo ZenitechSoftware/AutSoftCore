@@ -1,4 +1,4 @@
-using AutSoft.Mud.Blazor.ErrorHandling;
+using AutSoft.AspNetCore.Blazor;
 using AutSoft.Mud.Blazor.Loading;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
     /// <returns>Expanded service collection</returns>
     public static IServiceCollection AddAutSoftMudBlazor(this IServiceCollection services)
     {
+        services.AddAutSoftAspNetCoreBlazor();
         services.AddMudServices();
         services.AddScoped<CustomActionLoadingErrorHandlerFactory>();
         services.AddScoped<DefaultLoadingErrorHandlerFactory>();

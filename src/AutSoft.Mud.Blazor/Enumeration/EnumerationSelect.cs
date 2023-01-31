@@ -1,4 +1,5 @@
 using AutSoft.AspNetCore.Blazor.Enumeration;
+using AutSoft.Common.Enumeration;
 
 using Microsoft.AspNetCore.Components;
 
@@ -36,7 +37,7 @@ public class EnumerationSelect<T, TEnum> : MudSelect<T> where TEnum : Enum
     [Inject]
     private IEnumerationCache<TEnum> EnumerationCache { get; set; } = null!;
 
-    private List<EnumerationItem> _enumerationItems = new();
+    private List<EnumerationObjectItem> _enumerationItems = new();
 
     /// <summary>
     /// Default constructor of the EnumerationSelect.
@@ -71,7 +72,7 @@ public class EnumerationSelect<T, TEnum> : MudSelect<T> where TEnum : Enum
     {
         await base.SetParametersAsync(parameters);
 
-        if (Type.Equals(default(TEnum)))
+        if (!Type.Equals(default(TEnum)))
         {
             _enumerationItems = await EnumerationCache.ResolveEnumerationItemsAsync(Type);
             await UpdateTextPropertyAsync(false);

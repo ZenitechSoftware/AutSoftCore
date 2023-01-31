@@ -23,16 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AutSoft.AspNetCore.Blazor\AutSoft.AspNetCore.Blazor.csproj" />
   </ItemGroup>
 
   <Target Name="RemoveTSConfigFileFromPackage" AfterTargets="CompileTypeScriptWithTSConfig">
     <ItemGroup>
-      <Content Remove="**\tsconfig.json" />
+      <Content Remove="tsconfig.json" />
     </ItemGroup>
   </Target>
 </Project>

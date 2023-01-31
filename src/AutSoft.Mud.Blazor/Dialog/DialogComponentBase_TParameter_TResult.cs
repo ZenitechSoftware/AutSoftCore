@@ -5,7 +5,7 @@ namespace AutSoft.Mud.Blazor.Dialog;
 /// </summary>
 /// <typeparam name="TParameter">Parameter type.</typeparam>
 /// <typeparam name="TResult">Return value type.</typeparam>
-public abstract class DialogComponentBaseTParameterTResult<TParameter, TResult> : DialogComponentBaseTParameter<TParameter>
+public abstract class DialogComponentBase<TParameter, TResult> : DialogComponentBase<TParameter>
 {
     /// <summary>
     /// Close dialog.

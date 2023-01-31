@@ -39,7 +39,7 @@ public class AutoCompleteDataSource<TKey, TItem>
     /// <summary>
     /// Gets or sets the currently selected item.
     /// </summary>
-    /// <param name="i">Index,</param>
+    /// <param name="key">Index,</param>
     /// <returns>Item type.</returns>
     public TItem? this[TKey? key]
     {
