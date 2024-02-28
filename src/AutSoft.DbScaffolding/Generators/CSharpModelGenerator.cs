@@ -1,14 +1,11 @@
 using AutSoft.DbScaffolding.Configuration;
-
-using EntityFrameworkCore.Scaffolding.Handlebars;
-
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Scaffolding;
-using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
 using Microsoft.Extensions.Options;
-
+using EntityFrameworkCore.Scaffolding.Handlebars;
 using System.Linq;
+using Microsoft.EntityFrameworkCore.Scaffolding;
+using EntityFrameworkCore.Scaffolding.Handlebars.Internal;
 
 namespace AutSoft.DbScaffolding.Generators;
 

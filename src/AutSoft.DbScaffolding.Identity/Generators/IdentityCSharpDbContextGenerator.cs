@@ -5,6 +5,7 @@ using AutSoft.DbScaffolding.Identity.Extensions;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;

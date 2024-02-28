@@ -3,12 +3,12 @@ using AutSoft.DbScaffolding.Generators;
 using AutSoft.DbScaffolding.Services;
 
 using EntityFrameworkCore.Scaffolding.Handlebars;
+using EntityFrameworkCore.Scaffolding.Handlebars.Internal;
 
 using HandlebarsDotNet;
 
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Scaffolding;
-using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
 using Microsoft.Extensions.DependencyInjection;
 
 using System;

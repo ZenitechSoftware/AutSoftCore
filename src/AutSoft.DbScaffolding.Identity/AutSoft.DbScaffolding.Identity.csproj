@@ -5,10 +5,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.Scaffolding.Handlebars" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutSoft.DbScaffolding\AutSoft.DbScaffolding.csproj" />

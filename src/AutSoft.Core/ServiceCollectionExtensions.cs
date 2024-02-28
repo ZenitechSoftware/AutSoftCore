@@ -15,6 +15,6 @@ public static class ServiceCollectionExtensions
     /// <returns>Expanded service collection</returns>
     public static IServiceCollection AddAutSoftCommon(this IServiceCollection services)
     {
-        return services.AddSingleton<ITimeProvider, TimeProvider>();
+        return services.AddSingleton<ITimeProvider, Time.TimeProvider>();
     }
 }
