@@ -38,7 +38,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.AspNetCore.Blazor",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.Mud.Blazor", "src\AutSoft.Mud.Blazor\AutSoft.Mud.Blazor.csproj", "{91EDCF80-45C8-4728-9240-52DA8DAD8F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutSoft.EntityFrameworkCore", "src\AutSoft.EntityFrameworkCore\AutSoft.EntityFrameworkCore.csproj", "{A1B22128-F657-474E-ADD1-2CFB6994F14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutSoft.EntityFrameworkCore", "src\AutSoft.EntityFrameworkCore\AutSoft.EntityFrameworkCore.csproj", "{A1B22128-F657-474E-ADD1-2CFB6994F14F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
