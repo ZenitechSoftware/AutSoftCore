@@ -1,16 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.TypeScript.MSBuild">
       <PrivateAssets>all</PrivateAssets>
@@ -18,14 +14,12 @@
     </PackageReference>
     <PackageReference Include="Sve.Blazor.InfiniteScroll" />
     <PackageReference Include="FluentValidation" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
     <PackageReference Include="MudBlazor" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\AutSoft.AspNetCore.Blazor\AutSoft.AspNetCore.Blazor.csproj" />
   </ItemGroup>
-
   <Target Name="RemoveTSConfigFileFromPackage" AfterTargets="CompileTypeScriptWithTSConfig">
     <ItemGroup>
       <Content Remove="tsconfig.json" />
