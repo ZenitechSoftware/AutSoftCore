@@ -2,11 +2,11 @@
   <PropertyGroup>
     <Version>$(GITVERSION_MAJORMINORPATCH)</Version>
     <Company>AutSoft Ltd.</Company>
-    <Copyright>Copyright (c) AutSoft Ltd. 2022</Copyright>
+    <Copyright>Copyright (c) AutSoft Ltd. 2024</Copyright>
     <Authors>AutSoft Ltd.</Authors>
     <Description>Helper libraries for .NET applications</Description>
-    <PackageProjectUrl>https://github.com/AutSoft/AutSoftCore</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/AutSoft/AutSoftCore</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ZenitechSoftware/AutSoftCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ZenitechSoftware/AutSoftCore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>AutSoft-logo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
