@@ -50,7 +50,7 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
         if (stateModifiedDatePropertySelector != null && dbContext == null)
             throw new ArgumentNullException(nameof(timeProvider), $"If {nameof(stateModifiedDatePropertySelector)} is specified, the {nameof(dbContext)} parameter cannot be null");
 
-        OnTransitionedAsync(async _ =>
+        OnTransitionCompletedAsync(async _ =>
         {
             stateModifiedDatePropertySelector?.GetPropertyAccess().SetValue(entity, timeProvider?.Now);
 
@@ -84,20 +84,13 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
     /// Base abstract class of state machine factories
     /// </summary>
     /// <typeparam name="TStateMachine">Type of state machine to be created</typeparam>
-    public abstract class FactoryBase<TStateMachine>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="FactoryBase{TStateMachine}"/> class
+    /// </remarks>
+    /// <param name="serviceProvider">Instance of an IServiceProvider</param>
+    public abstract class FactoryBase<TStateMachine>(IServiceProvider serviceProvider)
         where TStateMachine : EntityStateMachineBase<TState, TTrigger, TEntity>
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FactoryBase{TStateMachine}"/> class
-        /// </summary>
-        /// <param name="serviceProvider">Instance of an IServiceProvider</param>
-        protected FactoryBase(IServiceProvider serviceProvider)
-        {
-            _serviceProvider = serviceProvider;
-        }
-
         /// <summary>
         /// Create a state machine with specified type
         /// </summary>
@@ -105,7 +98,7 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
         /// <returns>The created state machine</returns>
         public TStateMachine CreateStateMachine(TEntity entity)
         {
-            return ActivatorUtilities.CreateInstance<TStateMachine>(_serviceProvider, entity);
+            return ActivatorUtilities.CreateInstance<TStateMachine>(serviceProvider, entity);
         }
     }
 }
