@@ -37,7 +37,7 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
         TEntity entity,
         Expression<Func<TEntity, TState>> statePropertySelector,
         Expression<Func<TEntity, DateTimeOffset>>? stateModifiedDatePropertySelector = null,
-        ITimeProvider? timeProvider = null,
+        System.TimeProvider? timeProvider = null,
         DbContext? dbContext = null,
         string? exceptionMessage = null)
         : base(
@@ -52,7 +52,7 @@ public abstract class EntityStateMachineBase<TState, TTrigger, TEntity> : StateM
 
         OnTransitionCompletedAsync(async _ =>
         {
-            stateModifiedDatePropertySelector?.GetPropertyAccess().SetValue(entity, timeProvider?.Now);
+            stateModifiedDatePropertySelector?.GetPropertyAccess().SetValue(entity, timeProvider?.GetLocalNow());
 
             if (dbContext != null)
                 await dbContext.SaveChangesAsync();
